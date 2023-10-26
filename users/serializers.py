@@ -6,6 +6,7 @@ from rest_framework import status
 from django.db.models import fields
 from rest_framework import serializers
 from . models import (UserSettings , ValidationCodes)
+from django_countries.serializer_fields import CountryField
 
 User = get_user_model()
 
@@ -13,12 +14,38 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         exclude = ('password' ,'groups' ,'user_permissions')
-
-
+        
+        
+    def put_update(self , instance , data):
+        try:
+            instance.first_name = data['fname'] if (data['fname']) else instance
+            instance.last_name = data['lname'] if (data['lname']) else instance
+            return instance.save()
+        except:
+            raise Exception('Failed to update user name')
+        
+        
+    def patch_update(self ,instance, data):
+        try:
+            instance.avatar = data['avatar'] if data['avatar'] else instance
+            instance.locale = data['locale'] if data['locale'] else instance    
+            return instance.save()
+        except:
+            raise Exception('Failed to update user information')
+        
+    def update(self, instance, data):
+        method = data['method']
+        if method == "PUT":
+            return self.put_update(instance=instance , data=data)
+        if method == "PATCH":
+            return self.patch_update(instance=instance , data=data)
+        return instance
+    
+    
 class RegisterUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        exclude = ('groups' ,'user_permissions','is_admin','is_staff','is_active','is_superuser','employees')
+        exclude = ('groups' ,'user_permissions','is_admin','is_staff','is_active','is_superuser')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, data):
@@ -29,6 +56,9 @@ class RegisterUserSerializer(serializers.ModelSerializer):
             last_name = data['last_name'],
             password = data['password'],
             )
+        user.gender = data['gender']
+        user.phone = data['phone']
+        user.save()
         return user
 
 
@@ -57,7 +87,7 @@ class LoginSerializer(serializers.Serializer):
             return user
         raise serializers.ValidationError( {
             'status' : status.HTTP_404_NOT_FOUND,
-            'msg' : _('Incorrect Credentials Passed.')
+            'msg' : _('miss match username or email and password verify. your credentials and try again.')
         })
 
 
@@ -73,5 +103,14 @@ class ValidationCodesSerializer(serializers.ModelSerializer):
         model= ValidationCodes
         fields = '__all__'
     
+    
+    def validate(self , attr):
+        if not attr['for'] :
+            raise Exception(_("failed to proceed request")) 
+        return attr
+    
+    
+    def create(self, data):
+        return self.Meta.model.objects.create(user=data['user'],reset_code=data['code'] , code_for=data['for'])
     
     

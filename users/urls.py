@@ -1,12 +1,16 @@
-from django.urls import path, include
+from django.urls import path
 from . views import *
-from knox.views import LogoutAllView
+
+BASE_URL = 'auth'
 
 urlpatterns = [
-    path('register', SignUpAPI.as_view() , name='signup'),
-    path('login', SignInAPI.as_view() , name="login"), 
-    path('logout',Logout.as_view(), name="logout"),
-    path('logout/all',LogoutAllView.as_view(), name="logout_all"),
-    path('password/reset', password_reset , name='rest_password'),
-    path('password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
+    path(BASE_URL + '/register', SignUpUserView.as_view() , name='signup'),
+    path(BASE_URL + '/login', SignInUserView.as_view() , name="login"), 
+    path(BASE_URL + '/logout', LogOutView.as_view(), name="logout"),
+    path(BASE_URL + '/logout_all_devices' , LogoutAllDevicesView.as_view(), name="logout all"),
+    path('users/' , GetUsersView.as_view() , name='filter users'),
+    path('users/' , UpdateUserProfileView.as_view() , name='rest password'),
+    path(BASE_URL + '/password_reset_request' , ValidationCodesView.as_view() , name="gen validation code"),
+    path(BASE_URL + '/password_reset_request' , VerifyValidationCode.as_view() , name="verify pass code "),
+    path(BASE_URL + '/password_reset' , PassWordResetView.as_view() , name="reset pass code "),
 ]
