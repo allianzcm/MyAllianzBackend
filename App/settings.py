@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'knox',
     'phonenumbers',
     # custom apps
-    'users'
+    'users',
+    'gifts'
 ]
 
 MIDDLEWARE = [

@@ -3,10 +3,8 @@ from django.contrib.auth import get_user_model
 from django.db.models import Q as OrWhere
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
-from django.db.models import fields
 from rest_framework import serializers
 from . models import (UserSettings , ValidationCodes)
-from django_countries.serializer_fields import CountryField
 
 User = get_user_model()
 
@@ -103,12 +101,10 @@ class ValidationCodesSerializer(serializers.ModelSerializer):
         model= ValidationCodes
         fields = '__all__'
     
-    
     def validate(self , attr):
         if not attr['for'] :
             raise Exception(_("failed to proceed request")) 
         return attr
-    
     
     def create(self, data):
         return self.Meta.model.objects.create(user=data['user'],reset_code=data['code'] , code_for=data['for'])
