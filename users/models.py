@@ -3,15 +3,23 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.contrib.auth.models import ( AbstractBaseUser , PermissionsMixin)
 from django.utils.translation import gettext_lazy as _
+from django.utils.timezone import datetime
 from .managers import UserManager
 from App.models import (PersonBaseModel, AppModel)
 from django.conf import settings
-
+import os
 
 class Users(AbstractBaseUser ,  PermissionsMixin ,  PersonBaseModel ):
+    def update_filename(instance, filename):
+        now = datetime.now()
+        ext = filename.split('.')[-1]
+        path = "users/profile/avatar/{0}/{1}/{2}/".format(now.year , now.month , now.day)
+        format = f'{instance.id}.{ext}'
+        return os.path.join(path, format)
+
     email        = models.EmailField(verbose_name="email", max_length=60, unique=True)
     username     = models.CharField(max_length=30, unique=True)
-    avatar = models.ImageField(blank=True , default=None , null=True , upload_to='storage/users/avatar')
+    avatar = models.ImageField(blank=True , default=None , null=True , upload_to=update_filename)
     date_joined = models.DateTimeField(_("date joined"), default=timezone.now())
     language = models.CharField(max_length=10,choices=settings.LANGUAGES,default=settings.LANGUAGE_CODE)
     verified_on = models.DateTimeField(_('emailed verification date') , null=True)
@@ -25,6 +33,19 @@ class Users(AbstractBaseUser ,  PermissionsMixin ,  PersonBaseModel ):
     is_superuser = models.BooleanField(default=False)
     
 
+# {
+#   "password": "123",
+#   "first_name": "fotso",
+#   "last_name":"pires",
+#   "pob": "douala",
+#   "gender": "m",
+#   "country": null,
+#   "username":"1techGuy",
+#   "phone": "+237696681640",
+#   "email": "email@email3.com",
+#   "avatar":null,
+#   "lang":"en"
+# }
     USERNAME_FIELD = 'email' 
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
