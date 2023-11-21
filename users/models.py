@@ -31,21 +31,6 @@ class Users(AbstractBaseUser ,  PermissionsMixin ,  PersonBaseModel ):
     is_active    = models.BooleanField(default=True)
     is_staff     = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    
-
-# {
-#   "password": "123",
-#   "first_name": "fotso",
-#   "last_name":"pires",
-#   "pob": "douala",
-#   "gender": "m",
-#   "country": null,
-#   "username":"1techGuy",
-#   "phone": "+237696681640",
-#   "email": "email@email3.com",
-#   "avatar":null,
-#   "lang":"en"
-# }
     USERNAME_FIELD = 'email' 
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 

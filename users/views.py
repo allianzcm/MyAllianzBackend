@@ -187,17 +187,3 @@ class PassWordResetView(generics.UpdateAPIView):
             return Response(data={'msg': _('password modified successfully')})
         except:
             return Response(data={'msg': _('error while processing the request')})
-
-
-
-def send_password_reset_code_mail_to_user(request):
-    # here a mail containing the the pass word reset code
-    # to the user mail with a given email
-    user_id = request.data['user']
-    user = User.objects.get(pk=user_id)
-    send_mail(subject='welcome mail',
-              message='your password reset code is',
-              from_email="Allianzcm@Gmail.com",
-              recipient_list=[
-                  user.email
-              ])
