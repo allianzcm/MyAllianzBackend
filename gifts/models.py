@@ -4,12 +4,13 @@ from django.contrib.auth import get_user_model
 from App .models import AppModel
 User = get_user_model()
 
-class Gifts(AppModel):
+class Gift(AppModel):
     name_en = models.CharField(max_length=30 , blank=False)
     name_fr = models.CharField(max_length=30 , blank=False)
     desc_en = models.TextField()
     desc_fr = models.TextField()
-    stars = models.IntegerField()
+    img = models.ImageField(upload_to='gifts/',null=True , blank=True)
+    stars = models.IntegerField(null=True , blank=True)
 
     def __str__(self) -> str:
         return self.name_en
@@ -19,7 +20,7 @@ class Gifts(AppModel):
         verbose_name = _("gift")
         verbose_name_plural = _("gifts")
 
-class GiftRequests(AppModel):
+class GiftRequest(AppModel):
     STATUS = [
         ('pen','pending'),
         ('app','approved'),
@@ -27,7 +28,7 @@ class GiftRequests(AppModel):
         ('rec','received'),
     ]
     user = models.ForeignKey(User , on_delete=models.RESTRICT )
-    gift = models.ForeignKey(Gifts , on_delete=models.RESTRICT)
+    gift = models.ForeignKey(Gift , on_delete=models.RESTRICT)
     
     status = models.CharField(max_length=5 , choices=STATUS , default=STATUS[0][0])
     

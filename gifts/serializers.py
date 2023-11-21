@@ -9,7 +9,8 @@ from users.serializers import UserSerializer
 
 class GiftSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Gifts
+        model = Gift
+        fields = '__all__'
     
     def update(self, instance, data):
         instance.name_en = data['name_en'] if data['name_en'] else None
@@ -23,7 +24,8 @@ class GiftRequestSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     gift = GiftSerializer()
     class Meta:
-        model = GiftRequests
+        model = GiftRequest
+        fields = '__all__'
     
     def validate(self, attrs):
         # if not attrs['user']:
