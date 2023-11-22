@@ -1,10 +1,10 @@
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
-from django.db.models import Q as orWhere
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
-from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404 
-from rest_framework import generics
+from rest_framework import generics 
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny , IsAuthenticated , IsAdminUser
@@ -15,6 +15,8 @@ from App.permissions import IsUserActiveUser
 from .serializers import *
 from . models import ValidationCodes
 import random
+from rest_framework.decorators import api_view
+from App.tasks import send
 
 User = get_user_model()
 
@@ -187,3 +189,13 @@ class PassWordResetView(generics.UpdateAPIView):
             return Response(data={'msg': _('password modified successfully')})
         except:
             return Response(data={'msg': _('error while processing the request')})
+
+
+class RequestPasswordReset(APIView):
+    def get(request):
+        email = request.GET.get('email')
+        user = User.objects.get()
+        token = PasswordResetTokenGenerator.make_token(user=user)
+        print(token)
+        return Response({})
+

@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost:8000'
+    'localhost'
 ]
 
 
@@ -44,16 +44,22 @@ INSTALLED_APPS = [
 
     # third party apps
     'knox',
-    'phonenumbers',
+    "phonenumber_field",
+    'django_countries',
+    'django_filters',
+     'django_q',
     # custom apps
-    'users'
+    'users',
+    'gifts',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-        # third party middlewares clases
+    # third party middlewares clases
     # 'user_language_middleware.UserLanguageMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -88,21 +94,21 @@ WSGI_APPLICATION = 'App.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-     'default': {  
-        'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'my_database',  
-        'USER': 'root',  
-        'PASSWORD': 'your_password',  
-        'HOST': '127.0.0.1',  
-        'PORT': '3306',  
-        'OPTIONS': {  
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
-        }  
-    } ,
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+    #  'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'my_database',
+    #     'USER': 'root',
+    #     'PASSWORD': 'your_password',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '3306',
+    #     'OPTIONS': {
+    #         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+    #     }
+    # } ,
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -131,8 +137,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-    ('en',_('english')),
-    ('fr',_('french')),
+    ('en', _('english')),
+    ('fr', _('french')),
 ]
 
 TIME_ZONE = 'UTC'
@@ -162,10 +168,55 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    # ]
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+      ),
 }
 
 # custom base user model
 AUTH_USER_MODEL = 'users.Users'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000'
+]
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = 'storage'
+
+
+# mail settings configurations
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# email setting for mailtrap and outlook
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '9e206c1e378ce9'
+EMAIL_HOST_PASSWORD = '78c3f889645c51'
+EMAIL_PORT = '2525'
+
+
+# EMAIL_HOST = 'smtp-mail.outlook.com'
+# # EMAIL_HOST = 'smtp.office365.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'urben.fotso@allianz.com'
+# EMAIL_HOST_PASSWORD = 'Bienvenue@2023'
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'urben.fotso@allianz.com'
+
+Q_CLUSTER = {
+    'name': 'myproject',
+    'workers': 8,
+    'recycle': 500,
+    'timeout': 60,
+    'compress': True,
+    'save_limit': 250,
+    'queue_limit': 500,
+    'cpu_affinity': 1,
+    'label': 'Django Q',
+    'redis': {
+        'host': '127.0.0.1',
+        'port': 6379,
+        'db': 0, }
+}

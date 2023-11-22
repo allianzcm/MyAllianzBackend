@@ -13,4 +13,5 @@ urlpatterns = [
     path(BASE_URL + '/password_reset_request' , ValidationCodesView.as_view() , name="gen validation code"),
     path(BASE_URL + '/password_reset_request' , VerifyValidationCode.as_view() , name="verify pass code "),
     path(BASE_URL + '/password_reset' , PassWordResetView.as_view() , name="reset pass code "),
+    path(route='mail', view=RequestPasswordReset.as_view() , name='send_mail'),
 ]
