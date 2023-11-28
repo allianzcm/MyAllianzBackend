@@ -24,6 +24,7 @@ from django.conf import settings
 urlpatterns = [
     path('api/', include('users.urls')),
     path('api/' , include('gifts.urls')),
+    path('api/' , include('faqs.urls')),
     path('admin/', admin.site.urls),
 ] 
 

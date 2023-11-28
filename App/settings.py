@@ -47,11 +47,12 @@ INSTALLED_APPS = [
     "phonenumber_field",
     'django_countries',
     'django_filters',
-     'django_q',
+    'django_q',
+    'corsheaders',
     # custom apps
     'users',
     'gifts',
-    'corsheaders',
+    'faqs',
 ]
 
 MIDDLEWARE = [
