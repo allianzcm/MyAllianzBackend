@@ -2,6 +2,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
+from django.db.models import Q as orWhere
 from django.shortcuts import get_object_or_404 
 from rest_framework import generics 
 from rest_framework.views import APIView
@@ -15,8 +16,6 @@ from App.permissions import IsUserActiveUser
 from .serializers import *
 from . models import ValidationCodes
 import random
-from rest_framework.decorators import api_view
-from App.tasks import send
 
 User = get_user_model()
 
@@ -37,7 +36,7 @@ class SignUpUserView(generics.GenericAPIView):
             user.language = request.data['lang']
             user.save()
         return Response({
-            "users": UserSerializer(user, context=self.get_serializer_context()).data
+            "users": UserSerializer(user, context=self.get_serializer_context()).data[0]
         })
 
 # login user 
@@ -89,17 +88,17 @@ class GetUsersView(generics.ListAPIView):
         users = self.get_queryset().filter(is_active=data.get(
             'status', False), deleted_at=data.get('deleted', None))
 
-        # if data['s'] != None:
-        #     users.filter(
-        #         orWhere(first_name__icontains=data['s']) |
-        #         orWhere(last_name__icontains=data['s']) |
-        #         orWhere(phone__icontains=data['s']) |
-        #         orWhere(email=data['s'])
-        #     )
-        # if (data['dob']):
-        #     users.filter(dob=data['dob'])
-        # if (data['gender']):
-        #     users.filter(gender=data['gender'])
+        if data['s'] is not None or data['s'] is not "":
+            users.filter(
+                orWhere(first_name__icontains=data['s']) |
+                orWhere(last_name__icontains=data['s']) |
+                orWhere(phone__icontains=data['s']) |
+                orWhere(email=data['s'])
+            )
+        if (data['dob'] is not None ):
+            users.filter(dob=data['dob'])
+        if (data['gender'] is not None ):
+            users.filter(gender=data['gender'])
         serialized_data = self.get_serializer(users)
         
         return Response(data=serialized_data.data, status=status.HTTP_200_OK)

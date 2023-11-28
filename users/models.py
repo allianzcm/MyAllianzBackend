@@ -17,7 +17,7 @@ class Users(AbstractBaseUser ,  PermissionsMixin ,  PersonBaseModel ):
         format = f'{instance.id}.{ext}'
         return os.path.join(path, format)
 
-    email        = models.EmailField(verbose_name="email", max_length=60, unique=True)
+    email        = models.EmailField(verbose_name="email", max_length=60, unique=True , blank=True , null=True)
     username     = models.CharField(max_length=30, unique=True)
     avatar = models.ImageField(blank=True , default=None , null=True , upload_to=update_filename)
     date_joined = models.DateTimeField(_("date joined"), default=timezone.now())
@@ -25,7 +25,7 @@ class Users(AbstractBaseUser ,  PermissionsMixin ,  PersonBaseModel ):
     verified_on = models.DateTimeField(_('emailed verification date') , null=True)
 
     # The following fields are required for every customer User model
-    last_login   = models.DateTimeField(verbose_name='last login', auto_now=True)
+    last_login   = models.DateTimeField(verbose_name='last login')
     date_joined  = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
     is_admin     = models.BooleanField(default=False)
     is_active    = models.BooleanField(default=True)
