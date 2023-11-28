@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
-from App .models import AppModel
+from App.utils.models import AppModel
 User = get_user_model()
 
 class Gift(AppModel):

@@ -11,7 +11,7 @@ from rest_framework.permissions import AllowAny , IsAuthenticated , IsAdminUser
 from knox.models import AuthToken
 from knox.views import LoginView, LogoutView, LogoutAllView
 from knox.auth import TokenAuthentication
-from App.permissions import IsUserActiveUser
+from App.utils.permissions import IsUserActiveUser
 from .serializers import *
 from . models import ValidationCodes
 import random

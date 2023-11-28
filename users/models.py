@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.models import ( AbstractBaseUser , PermissionsMixin)
 from django.utils.translation import gettext_lazy as _
 from .managers import UserManager
-from App.models import (PersonBaseModel, AppModel)
+from App.utils.models import (PersonBaseModel, AppModel)
 from django.conf import settings
 
 
