@@ -47,12 +47,12 @@ INSTALLED_APPS = [
     "phonenumber_field",
     'django_countries',
     'django_filters',
-    'django_q',
     'corsheaders',
     # custom apps
     'users',
     'gifts',
     'faqs',
+    'django_q',
 ]
 
 MIDDLEWARE = [
@@ -206,8 +206,9 @@ EMAIL_PORT = '2525'
 # EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'urben.fotso@allianz.com'
 
+# settings.py example
 Q_CLUSTER = {
-    'name': 'myproject',
+    'name': 'AZCM_AFFILIATION',
     'workers': 8,
     'recycle': 500,
     'timeout': 60,
@@ -217,7 +218,7 @@ Q_CLUSTER = {
     'cpu_affinity': 1,
     'label': 'Django Q',
     'redis': {
-        'host': '127.0.0.1',
+        'host': 'localhost',
         'port': 6379,
         'db': 0, }
 }

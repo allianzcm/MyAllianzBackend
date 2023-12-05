@@ -1,5 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from rest_framework.decorators import api_view
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
 from django.db.models import Q as orWhere
@@ -13,11 +14,21 @@ from knox.models import AuthToken
 from knox.views import LoginView, LogoutView, LogoutAllView
 from knox.auth import TokenAuthentication
 from App.utils.permissions import IsUserActiveUser
+from App.utils.views import CoreBaseModelViewSet
 from .serializers import *
 from . models import ValidationCodes
 import random
+from django_q.tasks import async_task
+from django.core.mail import send_mail
 
 User = get_user_model()
+
+
+class RoleView(CoreBaseModelViewSet):
+    serializer_class = RoleSerializer
+    model = Role
+
+
 
 # register new user 
 class SignUpUserView(generics.GenericAPIView):
@@ -86,9 +97,9 @@ class GetUsersView(generics.ListAPIView):
     def get(self, request, *args, **kwargs):
         data = request.GET
         users = self.get_queryset().filter(is_active=data.get(
-            'status', False), deleted_at=data.get('deleted', None))
+            'status', False))
 
-        if data['s'] is not None or data['s'] is not "":
+        if data['s'] != None or data['s']  != "":
             users.filter(
                 orWhere(first_name__icontains=data['s']) |
                 orWhere(last_name__icontains=data['s']) |
@@ -170,6 +181,7 @@ class VerifyValidationCode(generics.RetrieveAPIView):
         else:
             return Response(data={'msg':"not found"} , status=status.HTTP_404_NOT_FOUND) 
     
+    
 
 class PassWordResetView(generics.UpdateAPIView):
     permission_classes = [AllowAny]
@@ -198,3 +210,14 @@ class RequestPasswordReset(APIView):
         print(token)
         return Response({})
 
+def send_email_async(subject, message, recipient_list):
+    # The actual email sending code
+    send_mail(subject, message, '9e206c1e378ce9', recipient_list)
+
+@api_view(['GET'])
+def mailer(request):
+        email = request.GET.get('email')
+        subject = "verification Code"
+        message = f'you verification code is {random.randint(2035 , 9999)}'
+        async_task(send_email_async , subject , message , [email])
+        return Response({'msg':"mailed send succefulle"})

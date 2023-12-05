@@ -4,9 +4,16 @@ from django.db.models import Q as OrWhere
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework import serializers
-from . models import (UserSettings , ValidationCodes)
+from . models import (UserSettings , ValidationCodes , Role)
 
 User = get_user_model()
+
+
+class RoleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model= Role
+        fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -87,6 +94,7 @@ class LoginSerializer(serializers.Serializer):
             'status' : status.HTTP_404_NOT_FOUND,
             'msg' : _('miss match username or email and password verify. your credentials and try again.')
         })
+
 
 
 class UserSettingsSerializer(serializers.ModelSerializer):
