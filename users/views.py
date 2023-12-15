@@ -5,6 +5,7 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
 from django.db.models import Q as orWhere
 from django.shortcuts import get_object_or_404 
+from django.contrib.auth.models import Group , Permission
 from rest_framework import generics 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -20,35 +21,43 @@ from . models import ValidationCodes
 import random
 from django_q.tasks import async_task
 from django.core.mail import send_mail
-
 User = get_user_model()
 
 
-class RoleView(CoreBaseModelViewSet):
-    serializer_class = RoleSerializer
-    model = Role
+class GroupView(CoreBaseModelViewSet):
+    serializer_class = GroupSerializer
+    model = Group
+
+class PermissionView(CoreBaseModelViewSet):
+    serializer_class = PermissionSerializer
+    model = Permission
 
 
 
-# register new user 
 class SignUpUserView(generics.GenericAPIView):
     serializer_class = RegisterUserSerializer
     permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        # return Response(data=request.data)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
-        if request.data['avatar']:
-            user.avatar = request.data['avatar']
-            user.save()
-        if request.data['lang']:
-            user.language = request.data['lang']
-            user.save()
-        return Response({
-            "users": UserSerializer(user, context=self.get_serializer_context()).data[0]
-        })
+        data = request.data
+
+        if data.get('avatar') is not None:
+            user.avatar = data.get('avatar')
+        if data.get('lang') is not None:
+            user.language = data.get('lang')
+        if data.get('resident') is not None:
+            user.resident = data.get('resident')
+        if data.get('country') is not None:
+            user.country = data.get('country')
+        if data.get('is_admin') == "true":
+            user.is_admin = True
+        if data.get('groups') is not None:
+            user.groups.add(*data.get('groups'))
+        user.save()
+        return Response(data=UserSerializer(user, context=self.get_serializer_context()).data)
 
 # login user 
 class SignInUserView(LoginView):
@@ -89,30 +98,13 @@ class LogoutAllDevicesView(LogoutAllView):
 
 # return a filtered lists of users 
 class GetUsersView(generics.ListAPIView):
-    serializer_class = UserSerializer
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated , IsAdminUser ]
+    serializer_class = GetUserSerializer
+    model = serializer_class.Meta.model
+    filterset_fields = ['first_name', 'is_admin']
+
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated , IsAdminUser ]
     queryset = User.objects.all()
-
-    def get(self, request, *args, **kwargs):
-        data = request.GET
-        users = self.get_queryset().filter(is_active=data.get(
-            'status', False))
-
-        if data['s'] != None or data['s']  != "":
-            users.filter(
-                orWhere(first_name__icontains=data['s']) |
-                orWhere(last_name__icontains=data['s']) |
-                orWhere(phone__icontains=data['s']) |
-                orWhere(email=data['s'])
-            )
-        if (data['dob'] is not None ):
-            users.filter(dob=data['dob'])
-        if (data['gender'] is not None ):
-            users.filter(gender=data['gender'])
-        serialized_data = self.get_serializer(users)
-        
-        return Response(data=serialized_data.data, status=status.HTTP_200_OK)
 
 class UpdateUserProfileView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated , IsAdminUser|IsUserActiveUser ]
@@ -221,3 +213,5 @@ def mailer(request):
         message = f'you verification code is {random.randint(2035 , 9999)}'
         async_task(send_email_async , subject , message , [email])
         return Response({'msg':"mailed send succefulle"})
+
+

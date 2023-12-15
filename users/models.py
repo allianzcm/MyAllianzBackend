@@ -10,11 +10,6 @@ from django.conf import settings
 import os
 
 
-class Role(AppModel):
-    role_en = models.CharField(max_length=150)
-    role_fr = models.CharField(max_length=150)
-
-
 class Users(AbstractBaseUser,  PermissionsMixin,  PersonBaseModel):
     def update_filename(instance, filename):
         now = datetime.now()
@@ -45,7 +40,7 @@ class Users(AbstractBaseUser,  PermissionsMixin,  PersonBaseModel):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False )
-    role = models.ForeignKey(Role, null=True, blank=True , on_delete=models.RESTRICT)
+    stars = models.IntegerField(default=0)
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']

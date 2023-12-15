@@ -4,21 +4,36 @@ from django.db.models import Q as OrWhere
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework import serializers
-from . models import (UserSettings , ValidationCodes , Role)
+from django.contrib.auth.models import Group , Permission
+from . models import (UserSettings , ValidationCodes)
 
 User = get_user_model()
 
 
-class RoleSerializer(serializers.ModelSerializer):
-
+class GroupSerializer(serializers.ModelSerializer):
     class Meta:
-        model= Role
+        model= Group
         fields = '__all__'
+
+
+class PermissionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Permission
+        fields = '__all__'
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        exclude = ('password' ,'groups' ,'user_permissions')
+        exclude = ['password']
+
+
+class GetUserSerializer(serializers.ModelSerializer):
+    groups = GroupSerializer(many=True)
+    user_permissions = PermissionSerializer(many=True)
+    class Meta:
+        model = User
+        exclude = ['password']
         
         
     def put_update(self , instance , data):
