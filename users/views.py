@@ -75,8 +75,9 @@ class SignInUserView(LoginView):
 
     def get_post_response_data(self, token, instance, user):
         serializer_data = UserSerializer(user).data,
+        user = serializer_data[0]
         data = {
-            'user': serializer_data,
+            'user': user,
             'expiry': self.format_expiry_datetime(instance.expiry),
             'token': token
         }
@@ -88,8 +89,6 @@ class LogOutView(LogoutView):
     def post(self, request, format=None):
         super().post(request=request, format=format)
         return Response({'msg': _("logout successfully")} , status.HTTP_204_NO_CONTENT)
-    
-    
 class LogoutAllDevicesView(LogoutAllView):
     def post(self, request, format=None):
         super().post(request=request, format=format)

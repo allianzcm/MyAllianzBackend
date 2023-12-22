@@ -179,8 +179,15 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'users.Users'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
+    'http://localhost:8081',
+    'http://localhost',
+    'http://localhost:3000',
+    'http://127.0.0.1:4040 ',
+    'https://387d-165-225-26-103.ngrok-free.app',
+    'https://2adb-41-202-216-194.ngrok-free.app'
 ]
+ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = 'storage'
