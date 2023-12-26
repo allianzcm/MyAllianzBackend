@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,9 @@ SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost'
+]
 
 
 # Application definition
@@ -44,11 +47,12 @@ INSTALLED_APPS = [
     "phonenumber_field",
     'django_countries',
     'django_filters',
-     'django_q',
+    'corsheaders',
     # custom apps
     'users',
     'gifts',
-    'corsheaders',
+    'faqs',
+    'django_q',
 ]
 
 MIDDLEWARE = [
@@ -91,21 +95,21 @@ WSGI_APPLICATION = 'App.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    #  'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'my_database',
-    #     'USER': 'root',
-    #     'PASSWORD': 'your_password',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': '3306',
-    #     'OPTIONS': {
-    #         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-    #     }
-    # } ,
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'azcm',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+    } ,
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
@@ -148,11 +152,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'storage/'
-STATIC_ROOT = 'storage/'
+STATIC_URL = 'static/'
+STATIC_ROOT = 'static/'
 STATICFILES_DIR = [
-    BASE_DIR / "storage/"
+    BASE_DIR / "static/"
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')
+MEDIA_URL = 'files/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -166,17 +172,22 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     # ]
-    'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
-      ),
+     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 # custom base user model
 AUTH_USER_MODEL = 'users.Users'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
+    'http://localhost:8081',
+    'http://localhost',
+    'http://localhost:3000',
+    'http://127.0.0.1:4040 ',
+    'https://387d-165-225-26-103.ngrok-free.app',
+    'https://2adb-41-202-216-194.ngrok-free.app'
 ]
+ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = 'storage'
@@ -200,8 +211,9 @@ EMAIL_PORT = '2525'
 # EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'urben.fotso@allianz.com'
 
+# settings.py example
 Q_CLUSTER = {
-    'name': 'myproject',
+    'name': 'AZCM_AFFILIATION',
     'workers': 8,
     'recycle': 500,
     'timeout': 60,
@@ -211,7 +223,7 @@ Q_CLUSTER = {
     'cpu_affinity': 1,
     'label': 'Django Q',
     'redis': {
-        'host': '127.0.0.1',
+        'host': 'localhost',
         'port': 6379,
         'db': 0, }
 }

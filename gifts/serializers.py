@@ -11,14 +11,6 @@ class GiftSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gift
         fields = '__all__'
-    
-    def update(self, instance, data):
-        instance.name_en = data['name_en'] if data['name_en'] else None
-        instance.name_fr = data['name_fr'] if data['name_fr'] else None
-        instance.desc_en = data['desc_en'] if data['desc_en'] else None
-        instance.desc_fr = data['desc_fr'] if data['desc_fr'] else None
-        instance.stars   = data['stars'] if data['stars'] else None
-        return instance.save()
 
 class GiftRequestSerializer(serializers.ModelSerializer):
     user = UserSerializer()

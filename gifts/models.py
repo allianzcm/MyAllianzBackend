@@ -9,8 +9,8 @@ class Gift(AppModel):
     name_fr = models.CharField(max_length=30 , blank=False)
     desc_en = models.TextField()
     desc_fr = models.TextField()
-    img = models.ImageField(upload_to='gifts/',null=True , blank=True)
-    stars = models.IntegerField(null=True , blank=True)
+    img = models.ImageField(upload_to='gifts/')
+    stars = models.IntegerField()
 
     def __str__(self) -> str:
         return self.name_en

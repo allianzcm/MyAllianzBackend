@@ -1,10 +1,13 @@
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
-from django.db.models import Q as orWhere
+from rest_framework.decorators import api_view
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
-from django.core.mail import send_mail
+from django.db.models import Q as orWhere
 from django.shortcuts import get_object_or_404 
-from rest_framework import generics
+from django.contrib.auth.models import Group , Permission
+from rest_framework import generics 
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny , IsAuthenticated , IsAdminUser
@@ -12,31 +15,49 @@ from knox.models import AuthToken
 from knox.views import LoginView, LogoutView, LogoutAllView
 from knox.auth import TokenAuthentication
 from App.utils.permissions import IsUserActiveUser
+from App.utils.views import CoreBaseModelViewSet
 from .serializers import *
 from . models import ValidationCodes
 import random
-
+from django_q.tasks import async_task
+from django.core.mail import send_mail
 User = get_user_model()
 
-# register new user 
+
+class GroupView(CoreBaseModelViewSet):
+    serializer_class = GroupSerializer
+    model = Group
+
+class PermissionView(CoreBaseModelViewSet):
+    serializer_class = PermissionSerializer
+    model = Permission
+
+
+
 class SignUpUserView(generics.GenericAPIView):
     serializer_class = RegisterUserSerializer
     permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        # return Response(data=request.data)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
-        if request.data['avatar']:
-            user.avatar = request.data['avatar']
-            user.save()
-        if request.data['lang']:
-            user.language = request.data['lang']
-            user.save()
-        return Response({
-            "users": UserSerializer(user, context=self.get_serializer_context()).data
-        })
+        data = request.data
+
+        if data.get('avatar') is not None:
+            user.avatar = data.get('avatar')
+        if data.get('lang') is not None:
+            user.language = data.get('lang')
+        if data.get('resident') is not None:
+            user.resident = data.get('resident')
+        if data.get('country') is not None:
+            user.country = data.get('country')
+        if data.get('is_admin') == "true":
+            user.is_admin = True
+        if data.get('groups') is not None:
+            user.groups.add(*data.get('groups'))
+        user.save()
+        return Response(data=UserSerializer(user, context=self.get_serializer_context()).data)
 
 # login user 
 class SignInUserView(LoginView):
@@ -54,8 +75,9 @@ class SignInUserView(LoginView):
 
     def get_post_response_data(self, token, instance, user):
         serializer_data = UserSerializer(user).data,
+        user = serializer_data[0]
         data = {
-            'user': serializer_data,
+            'user': user,
             'expiry': self.format_expiry_datetime(instance.expiry),
             'token': token
         }
@@ -67,8 +89,6 @@ class LogOutView(LogoutView):
     def post(self, request, format=None):
         super().post(request=request, format=format)
         return Response({'msg': _("logout successfully")} , status.HTTP_204_NO_CONTENT)
-    
-    
 class LogoutAllDevicesView(LogoutAllView):
     def post(self, request, format=None):
         super().post(request=request, format=format)
@@ -77,30 +97,13 @@ class LogoutAllDevicesView(LogoutAllView):
 
 # return a filtered lists of users 
 class GetUsersView(generics.ListAPIView):
-    serializer_class = UserSerializer
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated , IsAdminUser ]
+    serializer_class = GetUserSerializer
+    model = serializer_class.Meta.model
+    filterset_fields = ['first_name', 'is_admin']
+
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated , IsAdminUser ]
     queryset = User.objects.all()
-
-    def get(self, request, *args, **kwargs):
-        data = request.GET
-        users = self.get_queryset().filter(is_active=data.get(
-            'status', False), deleted_at=data.get('deleted', None))
-
-        # if data['s'] != None:
-        #     users.filter(
-        #         orWhere(first_name__icontains=data['s']) |
-        #         orWhere(last_name__icontains=data['s']) |
-        #         orWhere(phone__icontains=data['s']) |
-        #         orWhere(email=data['s'])
-        #     )
-        # if (data['dob']):
-        #     users.filter(dob=data['dob'])
-        # if (data['gender']):
-        #     users.filter(gender=data['gender'])
-        serialized_data = self.get_serializer(users)
-        
-        return Response(data=serialized_data.data, status=status.HTTP_200_OK)
 
 class UpdateUserProfileView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated , IsAdminUser|IsUserActiveUser ]
@@ -169,6 +172,7 @@ class VerifyValidationCode(generics.RetrieveAPIView):
         else:
             return Response(data={'msg':"not found"} , status=status.HTTP_404_NOT_FOUND) 
     
+    
 
 class PassWordResetView(generics.UpdateAPIView):
     permission_classes = [AllowAny]
@@ -189,15 +193,24 @@ class PassWordResetView(generics.UpdateAPIView):
             return Response(data={'msg': _('error while processing the request')})
 
 
+class RequestPasswordReset(APIView):
+    def get(request):
+        email = request.GET.get('email')
+        user = User.objects.get()
+        token = PasswordResetTokenGenerator.make_token(user=user)
+        print(token)
+        return Response({})
 
-def send_password_reset_code_mail_to_user(request):
-    # here a mail containing the the pass word reset code
-    # to the user mail with a given email
-    user_id = request.data['user']
-    user = User.objects.get(pk=user_id)
-    send_mail(subject='welcome mail',
-              message='your password reset code is',
-              from_email="Allianzcm@Gmail.com",
-              recipient_list=[
-                  user.email
-              ])
+def send_email_async(subject, message, recipient_list):
+    # The actual email sending code
+    send_mail(subject, message, '9e206c1e378ce9', recipient_list)
+
+@api_view(['GET'])
+def mailer(request):
+        email = request.GET.get('email')
+        subject = "verification Code"
+        message = f'you verification code is {random.randint(2035 , 9999)}'
+        async_task(send_email_async , subject , message , [email])
+        return Response({'msg':"mailed send succefulle"})
+
+

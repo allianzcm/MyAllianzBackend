@@ -4,14 +4,36 @@ from django.db.models import Q as OrWhere
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework import serializers
+from django.contrib.auth.models import Group , Permission
 from . models import (UserSettings , ValidationCodes)
 
 User = get_user_model()
 
+
+class GroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Group
+        fields = '__all__'
+
+
+class PermissionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Permission
+        fields = '__all__'
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        exclude = ('password' ,'groups' ,'user_permissions')
+        exclude = ['password']
+
+
+class GetUserSerializer(serializers.ModelSerializer):
+    groups = GroupSerializer(many=True)
+    user_permissions = PermissionSerializer(many=True)
+    class Meta:
+        model = User
+        exclude = ['password']
         
         
     def put_update(self , instance , data):
@@ -87,6 +109,7 @@ class LoginSerializer(serializers.Serializer):
             'status' : status.HTTP_404_NOT_FOUND,
             'msg' : _('miss match username or email and password verify. your credentials and try again.')
         })
+
 
 
 class UserSettingsSerializer(serializers.ModelSerializer):
