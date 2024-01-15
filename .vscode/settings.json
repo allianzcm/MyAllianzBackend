@@ -1,4 +1,5 @@
 {
     "sqltools.useNodeRuntime": true,
-    "editor.inlineSuggest.showToolbar": "onHover"
+    "editor.inlineSuggest.showToolbar": "onHover",
+    "python.analysis.autoImportCompletions": true
 }

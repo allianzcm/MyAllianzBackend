@@ -42,7 +42,7 @@ class Users(AbstractBaseUser,  PermissionsMixin,  PersonBaseModel):
     stars = models.IntegerField(default=0)
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name']
 
     objects = UserManager()
 

@@ -77,7 +77,6 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
     def create(self, data):
         user = User.objects.create_user(
-            username = data['username'],
             email = data['email'],
             first_name = data['first_name'],
             last_name = data['last_name'],
@@ -90,13 +89,13 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField()
+    email = serializers.CharField()
     password = serializers.CharField()
 
     def validate(self, data):
-        username = data['username']
         password = data['password']
-        user = self.authenticate_user(username=username , password=password)
+        email = data['email']
+        user = self.authenticate_user(email=email , password=password)
         if user.is_active:
             return user
         raise serializers.ValidationError({
@@ -105,16 +104,13 @@ class LoginSerializer(serializers.Serializer):
         })
 
 
-    def authenticate_user(self ,username : str ,  password : str):
-        user = User.objects.filter(
-            OrWhere(username = username ) |
-            OrWhere(email = username )
-        ).first()
+    def authenticate_user(self ,email : str ,  password : str):
+        user = User.objects.filter(email=email).first()
         if user and  user.check_password(password):
             return user
         raise serializers.ValidationError( {
             'status' : status.HTTP_404_NOT_FOUND,
-            'msg' : _('miss match username or email and password verify. your credentials and try again.')
+            'msg' : _('miss match email and password verify. your credentials and try again.')
         })
 
 
