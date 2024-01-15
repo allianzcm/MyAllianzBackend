@@ -29,7 +29,7 @@ class GiftRequest(AppModel):
     ]
     user = models.ForeignKey(User , on_delete=models.RESTRICT )
     gift = models.ForeignKey(Gift , on_delete=models.RESTRICT)
-    
+    validated_by = models.ForeignKey("self", on_delete=models.RESTRICT , null=True , blank=True)
     status = models.CharField(max_length=5 , choices=STATUS , default=STATUS[0][0])
     
     def __str__(self) -> str:

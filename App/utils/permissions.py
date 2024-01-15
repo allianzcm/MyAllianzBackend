@@ -13,7 +13,7 @@ class IsUserActiveUser(BasePermission):
         auth = get_authorization_header(request).split()
         data = {
             'id': request.user.id,
-            'token' : auth[1]
+            'token' : auth
         }
         # , token_key=data['token']
         token = AuthToken.objects.filter(user=data['id'] ).exists()

@@ -27,6 +27,13 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         exclude = ['password']
 
+    def validate(self, data):
+        request_method = self.context['request'].method
+        # Check if 'password' is present in the data and if the method is 'put' or 'patch'
+        if 'password' in data and request_method == ['PUT', 'PATCH']:
+            raise serializers.ValidationError({'password': 'You cannot update the password using this method.'})
+        return super(UserSerializer, self).validate(data)
+
 
 class GetUserSerializer(serializers.ModelSerializer):
     groups = GroupSerializer(many=True)
@@ -34,8 +41,8 @@ class GetUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         exclude = ['password']
-        
-        
+
+
     def put_update(self , instance , data):
         try:
             instance.first_name = data['fname'] if (data['fname']) else instance
@@ -43,16 +50,16 @@ class GetUserSerializer(serializers.ModelSerializer):
             return instance.save()
         except:
             raise Exception('Failed to update user name')
-        
-        
+
+
     def patch_update(self ,instance, data):
         try:
             instance.avatar = data['avatar'] if data['avatar'] else instance
-            instance.locale = data['locale'] if data['locale'] else instance    
+            instance.locale = data['locale'] if data['locale'] else instance
             return instance.save()
         except:
             raise Exception('Failed to update user information')
-        
+
     def update(self, instance, data):
         method = data['method']
         if method == "PUT":
@@ -60,8 +67,8 @@ class GetUserSerializer(serializers.ModelSerializer):
         if method == "PATCH":
             return self.patch_update(instance=instance , data=data)
         return instance
-    
-    
+
+
 class RegisterUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -123,13 +130,12 @@ class ValidationCodesSerializer(serializers.ModelSerializer):
     class Meta:
         model= ValidationCodes
         fields = '__all__'
-    
+
     def validate(self , attr):
         if not attr['for'] :
-            raise Exception(_("failed to proceed request")) 
+            raise Exception(_("failed to proceed request"))
         return attr
-    
+
     def create(self, data):
         return self.Meta.model.objects.create(user=data['user'],reset_code=data['code'] , code_for=data['for'])
-    
-    
+

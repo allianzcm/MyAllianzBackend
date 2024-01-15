@@ -1,20 +1,15 @@
-from django.shortcuts import get_object_or_404
 from django.utils.translation import gettext_lazy as _
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.response import Response
-from rest_framework.status import (HTTP_201_CREATED, HTTP_204_NO_CONTENT)
-from rest_framework.permissions import IsAuthenticated
-from knox.auth import TokenAuthentication
 from App.utils.views import CoreBaseModelViewSet
+from gifts.filters import GiftRequestFilter
 from . serializers import *
 
 class GiftView(CoreBaseModelViewSet):
     serializer_class = GiftSerializer
-    model = Gift
 
-class GiftRequestView(ModelViewSet):
-    serializer_class = GiftSerializer
-    model = GiftRequest
+class GiftRequestView(CoreBaseModelViewSet):
+    serializer_class = GiftRequestSerializer
+    filter_class= GiftRequestFilter
+    filterset_fields = ['user','validated_by','status']
 
 # @api_view(['GET'])
 # def mailing(request):

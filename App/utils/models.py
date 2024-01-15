@@ -3,9 +3,6 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from .managers import AppManager
 import uuid
-from django_countries.fields import CountryField
-
-from phonenumber_field.modelfields import PhoneNumberField
 
 
 class AppModel(models.Model):
@@ -40,10 +37,10 @@ class PersonBaseModel(AppModel):
     dob = models.DateField(null=True, blank=True)
     pob = models.CharField(max_length=100, null=True, blank=True)
     gender = models.CharField(choices=GENDER, max_length=20)
-    country = models.CharField(
-        max_length=150, blank=True, null=True, default=None)
+    country = models.CharField(max_length=150, blank=True, null=True, default=None)
     resident = models.CharField(max_length=150, blank=True, null=True)
-    phone = PhoneNumberField(null=False, blank=False)
+    phone = models.CharField(max_length=20,null=False, blank=False)
+    verification_code = models.CharField(max_length=9, blank=True, null=True)
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
+from datetime import timedelta
+from rest_framework.settings import api_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party apps
+    'django_extensions',
     'knox',
     "phonenumber_field",
     'django_countries',
@@ -57,8 +60,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # third party middlewares clases
-    # 'user_language_middleware.UserLanguageMiddleware',
+    # third party middlewares classes
+    'user_language_middleware.UserLanguageMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -172,19 +175,29 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     # ]
-     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+KNOX_TOKEN_MODEL = 'knox.AuthToken'
+
+REST_KNOX = {
+#   'SECURE_HASH_ALGORITHM': 'hashlib.sha512',
+    'AUTH_TOKEN_CHARACTER_LENGTH': 64,
+    'TOKEN_TTL': timedelta(hours=10),
+    'USER_SERIALIZER': 'knox.serializers.UserSerializer',
+    'TOKEN_LIMIT_PER_USER': None,
+    'AUTO_REFRESH': True,
+    'MIN_REFRESH_INTERVAL': 60,
+    'AUTH_HEADER_PREFIX': 'Token',
+    'EXPIRY_DATETIME_FORMAT': api_settings.DATETIME_FORMAT,
+    'TOKEN_MODEL': 'knox.AuthToken',
 }
 
 # custom base user model
 AUTH_USER_MODEL = 'users.Users'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8081',
-    'http://localhost',
     'http://localhost:3000',
-    'http://127.0.0.1:4040 ',
-    'https://387d-165-225-26-103.ngrok-free.app',
-    'https://2adb-41-202-216-194.ngrok-free.app'
 ]
 ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True

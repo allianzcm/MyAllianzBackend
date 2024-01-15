@@ -21,7 +21,6 @@ class Users(AbstractBaseUser,  PermissionsMixin,  PersonBaseModel):
 
     email = models.EmailField(
         verbose_name="email", max_length=60, unique=True, blank=True, null=True)
-    username = models.CharField(max_length=30, unique=True)
     avatar = models.ImageField(
         blank=True, default=None, null=True, upload_to=update_filename)
     date_joined = models.DateTimeField(
