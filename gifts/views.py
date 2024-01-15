@@ -1,6 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 from App.utils.views import CoreBaseModelViewSet
 from gifts.filters import GiftRequestFilter
+from rest_framework.response import Response
 from . serializers import *
 
 class GiftView(CoreBaseModelViewSet):
@@ -10,7 +11,11 @@ class GiftRequestView(CoreBaseModelViewSet):
     serializer_class = GiftRequestSerializer
     filter_class= GiftRequestFilter
     filterset_fields = ['user','validated_by','status']
-
+    
+    # def create(self, request, *args, **kwargs):
+    #     user = self.request.user
+    #     return Response(data={'stars':user.stars})
+        # return super().create(request, *args, **kwargs)
 # @api_view(['GET'])
 # def mailing(request):
 #     email = request.GET.get('email')
