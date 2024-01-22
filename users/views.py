@@ -17,6 +17,9 @@ from knox.views import LoginView, LogoutView, LogoutAllView
 from knox.auth import TokenAuthentication
 from App.utils.permissions import IsUserActiveUser
 from App.utils.views import CoreBaseModelViewSet
+import gifts
+from gifts.models import Gift, GiftRequest
+from gifts.serializers import GiftRequestSerializer, GiftSerializer
 from .serializers import *
 from . models import ValidationCodes
 from django.core.mail import send_mail
@@ -68,6 +71,7 @@ class SignUpUserView(generics.GenericAPIView):
 class SignInUserView(LoginView):
     serializer_class = LoginSerializer
     permission_classes = [AllowAny]
+    authentication_classes = []
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -103,6 +107,7 @@ class LogOutView(LogoutView):
 class LogoutAllDevicesView(LogoutAllView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsUserActiveUser]
+
     def post(self, request, format=None):
         super().post(request=request, format=format)
         return Response({'msg': _("logout from all devices successfully")}, status.HTTP_204_NO_CONTENT)
@@ -124,7 +129,7 @@ class UpdateUserProfileView(generics.UpdateAPIView):
     Returns:
         object (User): _description_
     """
-    permission_classes = [IsAdminUser | IsUserActiveUser]
+    # permission_classes = [IsAdminUser | IsUserActiveUser]
     serializer_class = UserSerializer
 
     def get_queryset(self):
@@ -260,3 +265,23 @@ class ChangePasswordView(APIView):
                 return Response({"detail": "Current password is incorrect."}, status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response({"detail": "Current or new password not provided."}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class HomeScreenDataView(APIView):
+    queryset = User.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        current_year = timezone.now().year
+        users = User.objects.filter(is_active=True)
+        admins = users.filter(is_active=True)
+        customers = users.filter(is_active=False)
+        gifts = Gift.objects.all()
+        gifts_requests = GiftRequest.objects.filter(
+            created_at__year=current_year)
+        return Response(data={
+            "admins": GetUserSerializer(instance=admins).data,
+            "customers": GetUserSerializer(instance=customers, many=True).data,
+            "gifts_request": GiftRequestSerializer(instance=gifts_requests, many=True).data,
+            "gifts": GiftSerializer(instance=gifts, many=True).data,
+        },
+            status=status.HTTP_200_OK)

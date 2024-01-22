@@ -30,7 +30,8 @@ SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost'
+    'localhost',
+    '80ae-165-225-26-109.ngrok-free.app'
 ]
 
 
@@ -98,7 +99,7 @@ WSGI_APPLICATION = 'App.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-     'default': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'azcm',
         'USER': 'root',
@@ -108,7 +109,7 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
-    } ,
+    },
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
@@ -160,8 +161,6 @@ STATIC_ROOT = 'static/'
 STATICFILES_DIR = [
     BASE_DIR / "static/"
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')
-MEDIA_URL = 'files/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -174,9 +173,8 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    # ]
-    
-     'DEFAULT_AUTHENTICATION_CLASSES': [
+    # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'knox.auth.TokenAuthentication',
     ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
@@ -185,7 +183,7 @@ REST_FRAMEWORK = {
 KNOX_TOKEN_MODEL = 'knox.AuthToken'
 
 REST_KNOX = {
-#   'SECURE_HASH_ALGORITHM': 'hashlib.sha512',
+    #   'SECURE_HASH_ALGORITHM': 'hashlib.sha512',
     'AUTH_TOKEN_CHARACTER_LENGTH': 64,
     'TOKEN_TTL': timedelta(hours=10),
     'USER_SERIALIZER': 'knox.serializers.UserSerializer',
@@ -202,12 +200,14 @@ AUTH_USER_MODEL = 'users.Users'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'http://localhost',
+    'https://80ae-165-225-26-109.ngrok-free.app'
 ]
 ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = 'storage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')
 
 
 # mail settings configurations

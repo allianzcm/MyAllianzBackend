@@ -4,18 +4,23 @@ from gifts.filters import GiftRequestFilter
 from rest_framework.response import Response
 from . serializers import *
 
+
 class GiftView(CoreBaseModelViewSet):
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
     serializer_class = GiftSerializer
+
 
 class GiftRequestView(CoreBaseModelViewSet):
     serializer_class = GiftRequestSerializer
-    filter_class= GiftRequestFilter
-    filterset_fields = ['user','validated_by','status']
-    
-    # def create(self, request, *args, **kwargs):
-    #     user = self.request.user
-    #     return Response(data={'stars':user.stars})
-        # return super().create(request, *args, **kwargs)
+    filter_class = GiftRequestFilter
+    filterset_fields = ['user', 'validated_by', 'status']
+
+    def create(self, request, *args, **kwargs):
+        user = self.request.user
+        gift = super().create(request, *args, **kwargs).data
+        return Response(data={'gift': gift, 'stars': user.stars})
+
 # @api_view(['GET'])
 # def mailing(request):
 #     email = request.GET.get('email')

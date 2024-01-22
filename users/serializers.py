@@ -36,8 +36,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class GetUserSerializer(serializers.ModelSerializer):
-    groups = GroupSerializer(many=True)
-    user_permissions = PermissionSerializer(many=True)
+    # groups = GroupSerializer(many=True)
+    # user_permissions = PermissionSerializer(many=True)
     class Meta:
         model = User
         exclude = ['password']

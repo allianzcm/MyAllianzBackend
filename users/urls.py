@@ -23,5 +23,6 @@ urlpatterns = [
     path(BASE_URL + '/change-password/',
          ChangePasswordView.as_view(), name='change-password'),
     path(route='mail', view=mailer, name='send_mail'),
+    path(route='home_data', view=HomeScreenDataView.as_view(), name='home data'),
 ]
 urlpatterns += router.urls
