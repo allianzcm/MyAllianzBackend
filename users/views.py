@@ -273,15 +273,15 @@ class HomeScreenDataView(APIView):
     def get(self, request, *args, **kwargs):
         current_year = timezone.now().year
         users = User.objects.filter(is_active=True)
-        admins = users.filter(is_active=True)
-        customers = users.filter(is_active=False)
+        admins = users.filter(is_admin=True)
+        customers = users.filter(is_admin=False)
         gifts = Gift.objects.all()
         gifts_requests = GiftRequest.objects.filter(
             created_at__year=current_year)
-        return Response(data={
-            "admins": GetUserSerializer(instance=admins).data,
-            "customers": GetUserSerializer(instance=customers, many=True).data,
-            "gifts_request": GiftRequestSerializer(instance=gifts_requests, many=True).data,
-            "gifts": GiftSerializer(instance=gifts, many=True).data,
-        },
-            status=status.HTTP_200_OK)
+        return Response({
+                        "admins": GetUserSerializer(instance=admins, many=True).data,
+                        "customers": GetUserSerializer(instance=customers, many=True).data,
+                        "gifts_request": GiftRequestSerializer(instance=gifts_requests, many=True, context={
+                            'request': self.request}).data,
+                        "gifts": GiftSerializer(instance=gifts, many=True).data,
+                        })

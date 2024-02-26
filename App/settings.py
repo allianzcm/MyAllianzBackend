@@ -27,12 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '80ae-165-225-26-109.ngrok-free.app'
-]
 
 
 # Application definition
@@ -48,15 +45,12 @@ INSTALLED_APPS = [
     # third party apps
     'django_extensions',
     'knox',
-    "phonenumber_field",
-    'django_countries',
     'django_filters',
     'corsheaders',
     # custom apps
     'users',
     'gifts',
     'faqs',
-    'django_q',
 ]
 
 MIDDLEWARE = [
@@ -102,8 +96,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'azcm',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'RaimsPires',
+        'PASSWORD': 'death the kid 2',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
@@ -201,9 +195,13 @@ AUTH_USER_MODEL = 'users.Users'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost',
+    "http://127.0.0.1",
     'https://80ae-165-225-26-109.ngrok-free.app'
 ]
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+        "127.0.0.1",
+        "locahost",
+]
 CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_URL = 'media/'
@@ -227,20 +225,3 @@ EMAIL_PORT = '2525'
 # EMAIL_HOST_PASSWORD = 'Bienvenue@2023'
 # EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'urben.fotso@allianz.com'
-
-# settings.py example
-Q_CLUSTER = {
-    'name': 'AZCM_AFFILIATION',
-    'workers': 8,
-    'recycle': 500,
-    'timeout': 60,
-    'compress': True,
-    'save_limit': 250,
-    'queue_limit': 500,
-    'cpu_affinity': 1,
-    'label': 'Django Q',
-    'redis': {
-        'host': 'localhost',
-        'port': 6379,
-        'db': 0, }
-}
