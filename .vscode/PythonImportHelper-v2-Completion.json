@@ -128,6 +128,30 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -642,58 +666,6 @@
         "documentation": {}
     },
     {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
-        "label": "argparse",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "argparse",
-        "description": "argparse",
-        "detail": "argparse",
-        "documentation": {}
-    },
-    {
-        "label": "pformat",
-        "importPath": "pprint",
-        "description": "pprint",
-        "isExtraImport": true,
-        "detail": "pprint",
-        "documentation": {}
-    },
-    {
-        "label": "jmespath",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "jmespath",
-        "description": "jmespath",
-        "detail": "jmespath",
-        "documentation": {}
-    },
-    {
-        "label": "exceptions",
-        "importPath": "jmespath",
-        "description": "jmespath",
-        "isExtraImport": true,
-        "detail": "jmespath",
-        "documentation": {}
-    },
-    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -1164,6 +1136,15 @@
         "documentation": {}
     },
     {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
         "label": "mailer",
         "kind": 2,
         "importPath": "App.utils.mailer",
@@ -1258,7 +1239,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7'\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True\nDEBUG = False\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1267,7 +1248,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7'\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True\nDEBUG = False\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1276,7 +1257,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "DEBUG = False\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # third party apps",
+        "peekOfCode": "DEBUG = True\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # third party apps",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1285,7 +1266,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # third party apps\n    'django_extensions',\n    'knox',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # third party apps\n    #  'windows_auth',\n    'django_extensions',",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1321,7 +1302,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'App.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'RaimsPires',\n        'PASSWORD': 'death the kid 2',\n        'HOST': '127.0.0.1',",
+        "peekOfCode": "WSGI_APPLICATION = 'App.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        'PASSWORD': 'allianzdb@2024',\n        'HOST': '127.0.0.1',",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1330,7 +1311,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'RaimsPires',\n        'PASSWORD': 'death the kid 2',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',\n        'OPTIONS': {\n            'init_command': \"SET sql_mode='STRICT_TRANS_TABLES'\"",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        'PASSWORD': 'allianzdb@2024',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',\n        'OPTIONS': {\n            'init_command': \"SET sql_mode='STRICT_TRANS_TABLES'\"",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1375,7 +1356,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nSTATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# Default primary key field type",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nSTATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# # Default primary key field type",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1384,7 +1365,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nSTATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nSTATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# # Default primary key field type\n# # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1393,7 +1374,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\nSTATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    # Use Django's standard `django.contrib.auth` permissions,",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# # Default primary key field type\n# # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    # Use Django's standard `django.contrib.auth` permissions,",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1402,7 +1383,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "STATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    # Use Django's standard `django.contrib.auth` permissions,\n    # or allow read-only access for unauthenticated users.",
+        "peekOfCode": "STATIC_ROOT = 'static/'\nSTATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# # Default primary key field type\n# # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    # Use Django's standard `django.contrib.auth` permissions,\n    # or allow read-only access for unauthenticated users.",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1411,7 +1392,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "STATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    # Use Django's standard `django.contrib.auth` permissions,\n    # or allow read-only access for unauthenticated users.\n    # 'DEFAULT_PERMISSION_CLASSES': [",
+        "peekOfCode": "STATICFILES_DIR = [\n    BASE_DIR / \"static/\"\n]\n# # Default primary key field type\n# # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    # Use Django's standard `django.contrib.auth` permissions,\n    # or allow read-only access for unauthenticated users.\n    # 'DEFAULT_PERMISSION_CLASSES': [",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1456,7 +1437,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    'https://80ae-165-225-26-109.ngrok-free.app'\n]\nALLOWED_HOSTS = [\n        \"127.0.0.1\",\n        \"locahost\",",
+        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1465,7 +1446,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    'https://80ae-165-225-26-109.ngrok-free.app'\n]\nALLOWED_HOSTS = [\n        \"127.0.0.1\",\n        \"locahost\",\n]",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1474,7 +1455,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "ALLOWED_HOSTS = [\n        \"127.0.0.1\",\n        \"locahost\",\n]\nCORS_ALLOW_ALL_ORIGINS = True\nMEDIA_URL = 'media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\n# email setting for mailtrap and outlook",
+        "peekOfCode": "ALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",\n]\nCORS_ALLOW_ALL_ORIGINS = True\nMEDIA_URL = 'storage/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1483,7 +1464,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nMEDIA_URL = 'media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\n# email setting for mailtrap and outlook\nEMAIL_HOST = 'sandbox.smtp.mailtrap.io'\nEMAIL_HOST_USER = '9e206c1e378ce9'\nEMAIL_HOST_PASSWORD = '78c3f889645c51'\nEMAIL_PORT = '2525'",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nMEDIA_URL = 'storage/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\n# email setting for mailtrap and outlook\nEMAIL_HOST = 'sandbox.smtp.mailtrap.io'\nEMAIL_HOST_USER = '9e206c1e378ce9'\nEMAIL_HOST_PASSWORD = '78c3f889645c51'\nEMAIL_PORT = '2525'",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1492,7 +1473,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "MEDIA_URL = 'media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\n# email setting for mailtrap and outlook\nEMAIL_HOST = 'sandbox.smtp.mailtrap.io'\nEMAIL_HOST_USER = '9e206c1e378ce9'\nEMAIL_HOST_PASSWORD = '78c3f889645c51'\nEMAIL_PORT = '2525'\n# EMAIL_HOST = 'smtp-mail.outlook.com'",
+        "peekOfCode": "MEDIA_URL = 'storage/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\n# email setting for mailtrap and outlook\nEMAIL_HOST = 'sandbox.smtp.mailtrap.io'\nEMAIL_HOST_USER = '9e206c1e378ce9'\nEMAIL_HOST_PASSWORD = '78c3f889645c51'\nEMAIL_PORT = '2525'\n# EMAIL_HOST = 'smtp-mail.outlook.com'",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1575,15 +1556,6 @@
         "description": "App.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "App.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "main",
-        "kind": 2,
-        "importPath": "env.Scripts.jp",
-        "description": "env.Scripts.jp",
-        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
-        "detail": "env.Scripts.jp",
         "documentation": {}
     },
     {
@@ -1785,6 +1757,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "users.migrations.0008_remove_users_avatar",
+        "description": "users.migrations.0008_remove_users_avatar",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0007_remove_users_username_alter_users_phone'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='users',\n            name='avatar',\n        ),\n    ]",
+        "detail": "users.migrations.0008_remove_users_avatar",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "users.migrations.0009_users_avatar",
+        "description": "users.migrations.0009_users_avatar",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0008_remove_users_avatar'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='users',\n            name='avatar',\n            field=models.ImageField(blank=True, default=None, null=True, upload_to=''),\n        ),",
+        "detail": "users.migrations.0009_users_avatar",
+        "documentation": {}
+    },
+    {
         "label": "UsersConfig",
         "kind": 6,
         "importPath": "users.apps",
@@ -1960,7 +1950,7 @@
         "kind": 6,
         "importPath": "users.views",
         "description": "users.views",
-        "peekOfCode": "class SignUpUserView(generics.GenericAPIView):\n    serializer_class = RegisterUserSerializer\n    permission_classes = [AllowAny]\n    def post(self, request, *args, **kwargs):\n        serializer = self.get_serializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        user = serializer.save()\n        data = request.data\n        if data.get('avatar') is not None:\n            user.avatar = data.get('avatar')",
+        "peekOfCode": "class SignUpUserView(generics.GenericAPIView):\n    serializer_class = RegisterUserSerializer\n    permission_classes = [AllowAny]\n    def post(self, request, *args, **kwargs):\n        serializer = self.get_serializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        user = serializer.save()\n        data = request.data\n        if data.get('is_admin') == \"true\":\n            user.is_admin = True",
         "detail": "users.views",
         "documentation": {}
     },

@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 
@@ -157,8 +157,8 @@ STATICFILES_DIR = [
     BASE_DIR / "static/"
 ]
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+# # Default primary key field type
+# # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -203,9 +203,10 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost',
     "http://127.0.0.1",
-    'https://80ae-165-225-26-109.ngrok-free.app'
+    "10.10.0.63:81"
 ]
 ALLOWED_HOSTS = [
+    "10.10.0.63",
         "127.0.0.1",
         "locahost",
 ]
