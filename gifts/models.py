@@ -39,3 +39,5 @@ class GiftRequest(AppModel):
         db_table = 'gift_requests'
         verbose_name = _("gift request")
         verbose_name_plural = _("gift requests")
+
+
