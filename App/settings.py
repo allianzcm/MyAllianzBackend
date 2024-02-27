@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bnc8b(pmrp6xan1vdtwahvx3f0738!*xmwn4dre$8j+%uxmyu7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -44,8 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     
 
     # third party apps
+    #  'windows_auth',
     'django_extensions',
     'knox',
     "phonenumber_field",
@@ -103,7 +105,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'azcm',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'allianzdb@2024',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
@@ -180,6 +182,12 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',  # Add the default authentication backend
+#     'windows_auth.backends.WindowsBackend',
+#     'windows_auth.middleware.WindowsAuthMiddleware',
+# ]
+
 KNOX_TOKEN_MODEL = 'knox.AuthToken'
 
 REST_KNOX = {
@@ -206,7 +214,7 @@ CORS_ALLOWED_ORIGINS = [
 ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
-MEDIA_URL = 'media/'
+MEDIA_URL = 'storage/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')
 
 
@@ -244,3 +252,14 @@ Q_CLUSTER = {
         'port': 6379,
         'db': 0, }
 }
+
+
+# WAUTH_DOMAINS = {
+#     "allianz-cm": {  # Domain name or NetBIOS name of your Windows domain
+#         "SERVER": "allianz-cm.lan",  # LDAP server address
+#         "SEARCH_BASE": "DC=allianz-cm,DC=lan",  # Search base for LDAP queries
+#         "USERNAME": "",  # Username for LDAP bind authentication
+#         "PASSWORD": "bind_password",  # Password for LDAP bind authentication
+#     },
+#     # Add additional domains as needed
+# }

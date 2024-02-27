@@ -12,13 +12,11 @@ class GiftSerializer(serializers.ModelSerializer):
 
 
 class GiftRequestSerializer(serializers.ModelSerializer):
-    # gift = GiftSerializer(read_only=True)
     class Meta:
         model = GiftRequest
         fields = '__all__'
 
     def to_representation(self, instance):
-        
         if self.context['request'].method == 'GET':
             representation = super().to_representation(instance)
             representation['user'] = UserSerializer(
@@ -30,8 +28,7 @@ class GiftRequestSerializer(serializers.ModelSerializer):
             return super().to_representation(instance)
 
     def validate(self, values):
-        request = self.context['request']
-        if request.method == 'POST':
+        if self.context['request'].method == 'POST':
             user = request.user
             gift = Gift.objects.get(id=values['gift'].id)
             if (user.stars < gift.stars):

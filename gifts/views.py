@@ -13,8 +13,8 @@ class GiftView(CoreBaseModelViewSet):
 
 class GiftRequestView(CoreBaseModelViewSet):
     serializer_class = GiftRequestSerializer
-    filter_class = GiftRequestFilter
-    filterset_fields = ['user', 'validated_by', 'status']
+    # filter_class = GiftRequestFilter
+    filterset_fields = ['status']
 
     def create(self, request, *args, **kwargs):
         user = self.request.user
