@@ -112,6 +112,14 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -570,6 +578,14 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -690,6 +706,22 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppModel",
+        "importPath": "App.utils.models",
+        "description": "App.utils.models",
+        "isExtraImport": true,
+        "detail": "App.utils.models",
+        "documentation": {}
+    },
+    {
         "label": "AppModel",
         "importPath": "App.utils.models",
         "description": "App.utils.models",
@@ -743,6 +775,14 @@
         "description": "faqs.models",
         "isExtraImport": true,
         "detail": "faqs.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -913,6 +953,14 @@
         "description": "gifts.filters",
         "isExtraImport": true,
         "detail": "gifts.filters",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -1745,6 +1793,105 @@
         "description": "gifts.views",
         "peekOfCode": "class GiftRequestView(CoreBaseModelViewSet):\n    serializer_class = GiftRequestSerializer\n    # filter_class = GiftRequestFilter\n    filterset_fields = ['status']\n    def create(self, request, *args, **kwargs):\n        user = self.request.user\n        gift = super().create(request, *args, **kwargs).data\n        return Response(data={'gift': gift, 'stars': user.stars})\n# @api_view(['GET'])\n# def mailing(request):",
         "detail": "gifts.views",
+        "documentation": {}
+    },
+    {
+        "label": "ServicesConfig",
+        "kind": 6,
+        "importPath": "services.apps",
+        "description": "services.apps",
+        "peekOfCode": "class ServicesConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'services'",
+        "detail": "services.apps",
+        "documentation": {}
+    },
+    {
+        "label": "InsuranceType",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class InsuranceType(models.TextChoices):\n        NONLIVE = 'nonLive'\n        LIVE = 'live'\nclass Products(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "Products",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class Products(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "Subscriber",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'\n        MARRIED = 'Married'\n        DIVORCED = 'Divorced'\n    civil_status = models.CharField(\n        max_length=20,\n        choices=CivilStatus.choices,\n        default=CivilStatus.SINGLE,\n    )",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "Beneficiary",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class Beneficiary(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    last_name = models.CharField(max_length=255)\n    first_name = models.CharField(max_length=255)\n    age = models.IntegerField()\n    address = models.TextField()\n    town_resident = models.CharField(max_length=255)\n    annuity_manager_phone_number = models.CharField(max_length=20)\n    annuity_amount = models.DecimalField(max_digits=15, decimal_places=2)\nclass Premium(AppModel):",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "Premium",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class Premium(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    annuitant_amount_to_be_paid = models.DecimalField(max_digits=15, decimal_places=2)\n    premium_for_guarantee = models.DecimalField(max_digits=15, decimal_places=2)\n    duration = models.CharField(max_length=50)\nclass MedicalHistoryQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\nclass UserMedicalHistory(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "MedicalHistoryQuestion",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class MedicalHistoryQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\nclass UserMedicalHistory(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    question = models.ForeignKey(MedicalHistoryQuestion, on_delete=models.CASCADE)\n    response = models.BooleanField()\nclass InsuranceQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserMedicalHistory",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class UserMedicalHistory(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    question = models.ForeignKey(MedicalHistoryQuestion, on_delete=models.CASCADE)\n    response = models.BooleanField()\nclass InsuranceQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\n    insurance_service = models.CharField(max_length=255)\nclass EligibilityCriteria(AppModel):\n    criteria_id = models.AutoField(primary_key=True)",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "InsuranceQuestion",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class InsuranceQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\n    insurance_service = models.CharField(max_length=255)\nclass EligibilityCriteria(AppModel):\n    criteria_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    meets_criteria = models.BooleanField()\nclass Subscription(AppModel):\n    subscription_id = models.AutoField(primary_key=True)",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "EligibilityCriteria",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class EligibilityCriteria(AppModel):\n    criteria_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    meets_criteria = models.BooleanField()\nclass Subscription(AppModel):\n    subscription_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    insurance_service = models.CharField(max_length=255)\n    subscription_date = models.DateField(auto_now_add=True)",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "Subscription",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class Subscription(AppModel):\n    subscription_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    insurance_service = models.CharField(max_length=255)\n    subscription_date = models.DateField(auto_now_add=True)",
+        "detail": "services.models",
         "documentation": {}
     },
     {
