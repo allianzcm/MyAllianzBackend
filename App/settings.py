@@ -97,8 +97,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'azcm',
-        'USER': 'root',
-        'PASSWORD': 'allianzdb@2024',
+        'USER': 'RaimsPires',
+        'PASSWORD': 'death the kid 2',
+        # 'PASSWORD': 'allianzdb@2024',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
@@ -203,7 +204,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost',
     "http://127.0.0.1",
-    "10.10.0.63:81"
+    "http://10.10.0.63:81"
 ]
 ALLOWED_HOSTS = [
     "10.10.0.63",

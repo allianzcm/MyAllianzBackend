@@ -32,30 +32,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -65,86 +41,6 @@
     },
     {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -441,6 +337,22 @@
         "documentation": {}
     },
     {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "status",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -610,22 +522,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -659,6 +555,22 @@
     },
     {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -834,6 +746,14 @@
         "documentation": {}
     },
     {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
         "label": "CoreBaseModelViewSet",
         "importPath": "App.utils.views",
         "description": "App.utils.views",
@@ -863,15 +783,6 @@
         "description": "faqs.serializers",
         "isExtraImport": true,
         "detail": "faqs.serializers",
-        "documentation": {}
-    },
-    {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
         "documentation": {}
     },
     {
@@ -956,20 +867,27 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth ",
+        "description": "django.contrib.auth ",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.contrib.auth ",
         "documentation": {}
     },
     {
-        "label": "users.models",
-        "kind": 6,
+        "label": "Beneficiary",
+        "importPath": "services.models",
+        "description": "services.models",
         "isExtraImport": true,
-        "importPath": "users.models",
-        "description": "users.models",
-        "detail": "users.models",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "Subscriber",
+        "importPath": "services.models",
+        "description": "services.models",
+        "isExtraImport": true,
+        "detail": "services.models",
         "documentation": {}
     },
     {
@@ -1350,7 +1268,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'App.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        'PASSWORD': 'allianzdb@2024',\n        'HOST': '127.0.0.1',",
+        "peekOfCode": "WSGI_APPLICATION = 'App.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'RaimsPires',\n        'PASSWORD': 'death the kid 2',\n        # 'PASSWORD': 'allianzdb@2024',",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1359,7 +1277,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        'PASSWORD': 'allianzdb@2024',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',\n        'OPTIONS': {\n            'init_command': \"SET sql_mode='STRICT_TRANS_TABLES'\"",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'RaimsPires',\n        'PASSWORD': 'death the kid 2',\n        # 'PASSWORD': 'allianzdb@2024',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',\n        'OPTIONS': {",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1485,7 +1403,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",",
+        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1494,7 +1412,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1593,7 +1511,7 @@
         "kind": 5,
         "importPath": "App.urls",
         "description": "App.urls",
-        "peekOfCode": "urlpatterns = [\n    path('api/', include('users.urls')),\n    path('api/' , include('gifts.urls')),\n    path('api/' , include('faqs.urls')),\n    path('admin/', admin.site.urls),\n] \nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('api/', include('users.urls')),\n    path('api/' , include('gifts.urls')),\n    path('api/' , include('faqs.urls')),\n    path('api/' , include('services.urls')),\n    path('admin/', admin.site.urls),\n] \nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "App.urls",
         "documentation": {}
     },
@@ -1604,24 +1522,6 @@
         "description": "App.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "App.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "faqs.migrations.0001_initial",
-        "description": "faqs.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='FAQ',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),",
-        "detail": "faqs.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "faqs.migrations.0002_faq_answer_fr",
-        "description": "faqs.migrations.0002_faq_answer_fr",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('faqs', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='faq',\n            name='answer_fr',\n            field=models.TextField(default=1),\n            preserve_default=False,",
-        "detail": "faqs.migrations.0002_faq_answer_fr",
         "documentation": {}
     },
     {
@@ -1676,24 +1576,6 @@
         "description": "faqs.views",
         "peekOfCode": "class FAQView(CoreBaseModelViewSet):\n    model = FAQ\n    serializer_class = FAQSerializer",
         "detail": "faqs.views",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "gifts.migrations.0001_initial",
-        "description": "gifts.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Gift',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),",
-        "detail": "gifts.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "gifts.migrations.0002_initial",
-        "description": "gifts.migrations.0002_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('gifts', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giftrequest',\n            name='user',",
-        "detail": "gifts.migrations.0002_initial",
         "documentation": {}
     },
     {
@@ -1809,16 +1691,34 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class InsuranceType(models.TextChoices):\n        NONLIVE = 'nonLive'\n        LIVE = 'live'\nclass Products(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)",
+        "peekOfCode": "class InsuranceType(models.TextChoices):\n        NONLIVE = 'nonLive'\n        LIVE = 'live'\nclass Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "Products",
+        "label": "Product",
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Products(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'",
+        "peekOfCode": "class Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)\nclass Question(AppModel):\n    question_en = models.TextField()\n    question_fr = models.TextField()",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class Question(AppModel):\n    question_en = models.TextField()\n    question_fr = models.TextField()\nclass UserAnswer(AppModel):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    answer = models.TextField()\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserAnswer",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class UserAnswer(AppModel):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    answer = models.TextField()\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'\n        MARRIED = 'Married'\n        DIVORCED = 'Divorced'\n    civil_status = models.CharField(",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1836,89 +1736,264 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Beneficiary(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    last_name = models.CharField(max_length=255)\n    first_name = models.CharField(max_length=255)\n    age = models.IntegerField()\n    address = models.TextField()\n    town_resident = models.CharField(max_length=255)\n    annuity_manager_phone_number = models.CharField(max_length=20)\n    annuity_amount = models.DecimalField(max_digits=15, decimal_places=2)\nclass Premium(AppModel):",
+        "peekOfCode": "class Beneficiary(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    last_name = models.CharField(max_length=255)\n    first_name = models.CharField(max_length=255)\n    age = models.IntegerField()\n    address = models.TextField()\n    town_resident = models.CharField(max_length=255)\n    annuity_manager_phone_number = models.CharField(max_length=20)\n    annuity_amount = models.DecimalField(max_digits=15, decimal_places=2)",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "Premium",
+        "label": {
+            "name": "",
+            "kind": 6,
+            "peekOfCode": "class  ServiceDuration(AppModel):\n    class DurationType(models.TextChoices):\n        WEK = 'Weeks'\n        MON = 'Months'\n        YAE = 'Year'\n    length = models.IntegerField()\nclass ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )"
+        },
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Premium(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    annuitant_amount_to_be_paid = models.DecimalField(max_digits=15, decimal_places=2)\n    premium_for_guarantee = models.DecimalField(max_digits=15, decimal_places=2)\n    duration = models.CharField(max_length=50)\nclass MedicalHistoryQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\nclass UserMedicalHistory(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)",
+        "peekOfCode": "class  ServiceDuration(AppModel):\n    class DurationType(models.TextChoices):\n        WEK = 'Weeks'\n        MON = 'Months'\n        YAE = 'Year'\n    length = models.IntegerField()\nclass ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "MedicalHistoryQuestion",
+        "label": "ZoneCover",
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class MedicalHistoryQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\nclass UserMedicalHistory(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    question = models.ForeignKey(MedicalHistoryQuestion, on_delete=models.CASCADE)\n    response = models.BooleanField()\nclass InsuranceQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()",
+        "peekOfCode": "class ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )\nclass AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product)",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "UserMedicalHistory",
+        "label": "AgeRange",
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class UserMedicalHistory(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    question = models.ForeignKey(MedicalHistoryQuestion, on_delete=models.CASCADE)\n    response = models.BooleanField()\nclass InsuranceQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\n    insurance_service = models.CharField(max_length=255)\nclass EligibilityCriteria(AppModel):\n    criteria_id = models.AutoField(primary_key=True)",
+        "peekOfCode": "class AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "InsuranceQuestion",
+        "label": "Pricing",
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class InsuranceQuestion(AppModel):\n    question_id = models.AutoField(primary_key=True)\n    question_text = models.TextField()\n    insurance_service = models.CharField(max_length=255)\nclass EligibilityCriteria(AppModel):\n    criteria_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    meets_criteria = models.BooleanField()\nclass Subscription(AppModel):\n    subscription_id = models.AutoField(primary_key=True)",
+        "peekOfCode": "class Pricing(AppModel):\n    product = models.ForeignKey(to=Product)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n# This class named Contrat is a subclass of AppModel.\nclass Contract(AppModel):",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "EligibilityCriteria",
+        "label": "Contract",
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class EligibilityCriteria(AppModel):\n    criteria_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    meets_criteria = models.BooleanField()\nclass Subscription(AppModel):\n    subscription_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    insurance_service = models.CharField(max_length=255)\n    subscription_date = models.DateField(auto_now_add=True)",
+        "peekOfCode": "class Contract(AppModel):\n    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True)\n    approved_on = models.DateTimeField(blank=True , null=True , default=None)\n    commissioned_by = models.ForeignKey(to=User , on_delete=models.RESTRICT , blank=True , null=True)\n    subscriber_info = models.ForeignKey(to=Subscriber , on_delete=models.RESTRICT)\n    pricing = models.ForeignKey(to=Pricing , on_delete=models.RESTRICT)\n    beneficial = models.ForeignKey(to=Beneficiary , on_delete=models.RESTRICT , blank=True , null=True)",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "Subscription",
-        "kind": 6,
+        "label": "User",
+        "kind": 5,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Subscription(AppModel):\n    subscription_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    insurance_service = models.CharField(max_length=255)\n    subscription_date = models.DateField(auto_now_add=True)",
+        "peekOfCode": "User = get_user_model()\nclass InsuranceType(models.TextChoices):\n        NONLIVE = 'nonLive'\n        LIVE = 'live'\nclass Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()",
         "detail": "services.models",
         "documentation": {}
     },
     {
-        "label": "Migration",
+        "label": "ProductSerializer",
         "kind": 6,
-        "importPath": "users.migrations.0001_initial",
-        "description": "users.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Users',\n            fields=[\n                ('password', models.CharField(max_length=128, verbose_name='password')),",
-        "detail": "users.migrations.0001_initial",
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class ProductSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Product\n        fields = '__all__'\nclass QuestionSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Question\n        fields = '__all__'\nclass UserAnswerSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
         "documentation": {}
     },
     {
-        "label": "Migration",
+        "label": "QuestionSerializer",
         "kind": 6,
-        "importPath": "users.migrations.0008_remove_users_avatar",
-        "description": "users.migrations.0008_remove_users_avatar",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0007_remove_users_username_alter_users_phone'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='users',\n            name='avatar',\n        ),\n    ]",
-        "detail": "users.migrations.0008_remove_users_avatar",
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class QuestionSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Question\n        fields = '__all__'\nclass UserAnswerSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UserAnswer\n        fields = '__all__'\nclass SubscriberSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
         "documentation": {}
     },
     {
-        "label": "Migration",
+        "label": "UserAnswerSerializer",
         "kind": 6,
-        "importPath": "users.migrations.0009_users_avatar",
-        "description": "users.migrations.0009_users_avatar",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0008_remove_users_avatar'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='users',\n            name='avatar',\n            field=models.ImageField(blank=True, default=None, null=True, upload_to=''),\n        ),",
-        "detail": "users.migrations.0009_users_avatar",
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class UserAnswerSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UserAnswer\n        fields = '__all__'\nclass SubscriberSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Subscriber\n        fields = '__all__'\nclass BeneficiarySerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "SubscriberSerializer",
+        "kind": 6,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class SubscriberSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Subscriber\n        fields = '__all__'\nclass BeneficiarySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Beneficiary\n        fields = '__all__'\nclass ServiceDurationSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "BeneficiarySerializer",
+        "kind": 6,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class BeneficiarySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Beneficiary\n        fields = '__all__'\nclass ServiceDurationSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ServiceDuration\n        fields = '__all__'\nclass ZoneCoverSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceDurationSerializer",
+        "kind": 6,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class ServiceDurationSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ServiceDuration\n        fields = '__all__'\nclass ZoneCoverSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ZoneCover\n        fields = '__all__'\nclass AgeRangeSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ZoneCoverSerializer",
+        "kind": 6,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class ZoneCoverSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ZoneCover\n        fields = '__all__'\nclass AgeRangeSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = AgeRange\n        fields = '__all__'\nclass PricingSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "AgeRangeSerializer",
+        "kind": 6,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class AgeRangeSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = AgeRange\n        fields = '__all__'\nclass PricingSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Pricing\n        fields = '__all__'\nclass ContractSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PricingSerializer",
+        "kind": 6,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class PricingSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Pricing\n        fields = '__all__'\nclass ContractSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Contract\n        fields = '__all__'",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ContractSerializer",
+        "kind": 6,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "class ContractSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Contract\n        fields = '__all__'",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "services.urls",
+        "description": "services.urls",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'products', ProductViewSet)\nrouter.register(r'questions', QuestionViewSet)\nrouter.register(r'user-answers', UserAnswerViewSet)\nrouter.register(r'subscribers', SubscriberViewSet)\nrouter.register(r'beneficiaries', BeneficiaryViewSet)\nrouter.register(r'service-durations', ServiceDurationViewSet)\nrouter.register(r'zone-covers', ZoneCoverViewSet)\nrouter.register(r'age-ranges', AgeRangeViewSet)\nrouter.register(r'pricings', PricingViewSet)",
+        "detail": "services.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "services.urls",
+        "description": "services.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', include(router.urls)),\n]",
+        "detail": "services.urls",
+        "documentation": {}
+    },
+    {
+        "label": "ProductViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class ProductViewSet(viewsets.ModelViewSet):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\nclass QuestionViewSet(viewsets.ModelViewSet):\n    queryset = Question.objects.all()\n    serializer_class = QuestionSerializer\nclass UserAnswerViewSet(viewsets.ModelViewSet):\n    queryset = UserAnswer.objects.all()\n    serializer_class = UserAnswerSerializer\nclass SubscriberViewSet(viewsets.ModelViewSet):",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class QuestionViewSet(viewsets.ModelViewSet):\n    queryset = Question.objects.all()\n    serializer_class = QuestionSerializer\nclass UserAnswerViewSet(viewsets.ModelViewSet):\n    queryset = UserAnswer.objects.all()\n    serializer_class = UserAnswerSerializer\nclass SubscriberViewSet(viewsets.ModelViewSet):\n    queryset = Subscriber.objects.all()\n    serializer_class = SubscriberSerializer\nclass BeneficiaryViewSet(viewsets.ModelViewSet):",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "UserAnswerViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class UserAnswerViewSet(viewsets.ModelViewSet):\n    queryset = UserAnswer.objects.all()\n    serializer_class = UserAnswerSerializer\nclass SubscriberViewSet(viewsets.ModelViewSet):\n    queryset = Subscriber.objects.all()\n    serializer_class = SubscriberSerializer\nclass BeneficiaryViewSet(viewsets.ModelViewSet):\n    queryset = Beneficiary.objects.all()\n    serializer_class = BeneficiarySerializer\nclass ServiceDurationViewSet(viewsets.ModelViewSet):",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "SubscriberViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class SubscriberViewSet(viewsets.ModelViewSet):\n    queryset = Subscriber.objects.all()\n    serializer_class = SubscriberSerializer\nclass BeneficiaryViewSet(viewsets.ModelViewSet):\n    queryset = Beneficiary.objects.all()\n    serializer_class = BeneficiarySerializer\nclass ServiceDurationViewSet(viewsets.ModelViewSet):\n    queryset = ServiceDuration.objects.all()\n    serializer_class = ServiceDurationSerializer\nclass ZoneCoverViewSet(viewsets.ModelViewSet):",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "BeneficiaryViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class BeneficiaryViewSet(viewsets.ModelViewSet):\n    queryset = Beneficiary.objects.all()\n    serializer_class = BeneficiarySerializer\nclass ServiceDurationViewSet(viewsets.ModelViewSet):\n    queryset = ServiceDuration.objects.all()\n    serializer_class = ServiceDurationSerializer\nclass ZoneCoverViewSet(viewsets.ModelViewSet):\n    queryset = ZoneCover.objects.all()\n    serializer_class = ZoneCoverSerializer\nclass AgeRangeViewSet(viewsets.ModelViewSet):",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceDurationViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class ServiceDurationViewSet(viewsets.ModelViewSet):\n    queryset = ServiceDuration.objects.all()\n    serializer_class = ServiceDurationSerializer\nclass ZoneCoverViewSet(viewsets.ModelViewSet):\n    queryset = ZoneCover.objects.all()\n    serializer_class = ZoneCoverSerializer\nclass AgeRangeViewSet(viewsets.ModelViewSet):\n    queryset = AgeRange.objects.all()\n    serializer_class = AgeRangeSerializer\nclass PricingViewSet(viewsets.ModelViewSet):",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "ZoneCoverViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class ZoneCoverViewSet(viewsets.ModelViewSet):\n    queryset = ZoneCover.objects.all()\n    serializer_class = ZoneCoverSerializer\nclass AgeRangeViewSet(viewsets.ModelViewSet):\n    queryset = AgeRange.objects.all()\n    serializer_class = AgeRangeSerializer\nclass PricingViewSet(viewsets.ModelViewSet):\n    queryset = Pricing.objects.all()\n    serializer_class = PricingSerializer\nclass ContractViewSet(viewsets.ModelViewSet):",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "AgeRangeViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class AgeRangeViewSet(viewsets.ModelViewSet):\n    queryset = AgeRange.objects.all()\n    serializer_class = AgeRangeSerializer\nclass PricingViewSet(viewsets.ModelViewSet):\n    queryset = Pricing.objects.all()\n    serializer_class = PricingSerializer\nclass ContractViewSet(viewsets.ModelViewSet):\n    queryset = Contract.objects.all()\n    serializer_class = ContractSerializer",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "PricingViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class PricingViewSet(viewsets.ModelViewSet):\n    queryset = Pricing.objects.all()\n    serializer_class = PricingSerializer\nclass ContractViewSet(viewsets.ModelViewSet):\n    queryset = Contract.objects.all()\n    serializer_class = ContractSerializer",
+        "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "ContractViewSet",
+        "kind": 6,
+        "importPath": "services.views",
+        "description": "services.views",
+        "peekOfCode": "class ContractViewSet(viewsets.ModelViewSet):\n    queryset = Contract.objects.all()\n    serializer_class = ContractSerializer",
+        "detail": "services.views",
         "documentation": {}
     },
     {
