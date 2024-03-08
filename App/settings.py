@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'users',
     'gifts',
     'faqs',
+    'services',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,10 @@
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from .models import Product, Subscriber, Beneficiary, ServiceDuration, ZoneCover, AgeRange, Pricing, Contract
+# The line `model = Product` in the `ProductSerializer` class is specifying the model class that the serializer should be based on. In this case, the `ProductSerializer` is designed to serialize instances of the `Product` model. This allows the serializer to automatically generate the fields based on the model definition, making it easier to work with data serialization and deserialization in Django REST framework.
+from .models import (AgeRange, Beneficiary, Contract, Pricing, Product, Question, ServiceDuration,
+    Subscriber, UserAnswer, ZoneCover)
+
+USER = get_user_model()
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:

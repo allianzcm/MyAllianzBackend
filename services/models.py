@@ -1,14 +1,19 @@
 from django.contrib.auth  import get_user_model
 from django.db import models
 from App.utils.models import AppModel
-from services.models import Beneficiary, Subscriber
 
 User = get_user_model()
 
-class InsuranceType(models.TextChoices):
-        NONLIVE = 'nonLive'
-        LIVE = 'live'
-        
+INSURANCE_TYPE = [
+    ('nonLive' , "NON_LIVE"),
+    ('live','LIVE')   
+    ]
+
+CIVIL_STATUS = [
+        ("Single","SINGLE"),
+        ("Married","MARRIED" ),
+        ("Divorced","DIVORCED")
+]    
 class Product(AppModel):
     name_en = models.CharField(max_length=255)
     
@@ -20,7 +25,7 @@ class Product(AppModel):
 
     image = models.ImageField()
 
-    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)
+    insurance_type = models.CharField(max_length=20,choices=INSURANCE_TYPE )
 
 
 class Question(AppModel):
@@ -36,23 +41,9 @@ class UserAnswer(AppModel):
     
 class Subscriber(AppModel):
 
-    class CivilStatus(models.TextChoices):
+   
 
-        SINGLE = 'Single'
-
-        MARRIED = 'Married'
-
-        DIVORCED = 'Divorced'
-
-
-    civil_status = models.CharField(
-
-        max_length=20,
-
-        choices=CivilStatus.choices,
-
-        default=CivilStatus.SINGLE,
-    )
+    civil_status = models.CharField(max_length=20,choices=CIVIL_STATUS)
     
     first_name = models.CharField(max_length=255)
 
@@ -130,7 +121,7 @@ class AgeRange(AppModel):
 
 class Pricing(AppModel):
 
-    product = models.ForeignKey(to=Product)
+    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)
 
     duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)
 
@@ -150,11 +141,11 @@ class Pricing(AppModel):
 class Contract(AppModel):
 
 
-    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True)
+    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True , related_name="contract_approved_by")
         
     approved_on = models.DateTimeField(blank=True , null=True , default=None)
     
-    commissioned_by = models.ForeignKey(to=User , on_delete=models.RESTRICT , blank=True , null=True)
+    commissioned_by = models.ForeignKey(to=User , on_delete=models.RESTRICT , blank=True , null=True , related_name="contract_commissioned")
 
     subscriber_info = models.ForeignKey(to=Subscriber , on_delete=models.RESTRICT)
 

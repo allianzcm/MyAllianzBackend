@@ -32,6 +32,14 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -41,6 +49,94 @@
     },
     {
         "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -522,6 +618,30 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -786,12 +906,29 @@
         "documentation": {}
     },
     {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
         "label": "django_filters",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "django_filters",
         "description": "django_filters",
         "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
@@ -875,19 +1012,12 @@
         "documentation": {}
     },
     {
-        "label": "Beneficiary",
-        "importPath": "services.models",
-        "description": "services.models",
+        "label": "users.models",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "services.models",
-        "documentation": {}
-    },
-    {
-        "label": "Subscriber",
-        "importPath": "services.models",
-        "description": "services.models",
-        "isExtraImport": true,
-        "detail": "services.models",
+        "importPath": "users.models",
+        "description": "users.models",
+        "detail": "users.models",
         "documentation": {}
     },
     {
@@ -1525,6 +1655,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "faqs.migrations.0001_initial",
+        "description": "faqs.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='FAQ',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),",
+        "detail": "faqs.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "FaqsConfig",
         "kind": 6,
         "importPath": "faqs.apps",
@@ -1576,6 +1715,24 @@
         "description": "faqs.views",
         "peekOfCode": "class FAQView(CoreBaseModelViewSet):\n    model = FAQ\n    serializer_class = FAQSerializer",
         "detail": "faqs.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "gifts.migrations.0001_initial",
+        "description": "gifts.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Gift',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),",
+        "detail": "gifts.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "gifts.migrations.0002_initial",
+        "description": "gifts.migrations.0002_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('gifts', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giftrequest',\n            name='user',",
+        "detail": "gifts.migrations.0002_initial",
         "documentation": {}
     },
     {
@@ -1678,6 +1835,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "services.migrations.0001_initial",
+        "description": "services.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='AgeRange',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),",
+        "detail": "services.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "services.migrations.0002_initial",
+        "description": "services.migrations.0002_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('services', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='useranswer',\n            name='user',",
+        "detail": "services.migrations.0002_initial",
+        "documentation": {}
+    },
+    {
         "label": "ServicesConfig",
         "kind": 6,
         "importPath": "services.apps",
@@ -1687,20 +1862,11 @@
         "documentation": {}
     },
     {
-        "label": "InsuranceType",
-        "kind": 6,
-        "importPath": "services.models",
-        "description": "services.models",
-        "peekOfCode": "class InsuranceType(models.TextChoices):\n        NONLIVE = 'nonLive'\n        LIVE = 'live'\nclass Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)",
-        "detail": "services.models",
-        "documentation": {}
-    },
-    {
         "label": "Product",
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)\nclass Question(AppModel):\n    question_en = models.TextField()\n    question_fr = models.TextField()",
+        "peekOfCode": "class Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharField(max_length=20,choices=INSURANCE_TYPE )\nclass Question(AppModel):\n    question_en = models.TextField()\n    question_fr = models.TextField()",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1709,7 +1875,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Question(AppModel):\n    question_en = models.TextField()\n    question_fr = models.TextField()\nclass UserAnswer(AppModel):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    answer = models.TextField()\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'",
+        "peekOfCode": "class Question(AppModel):\n    question_en = models.TextField()\n    question_fr = models.TextField()\nclass UserAnswer(AppModel):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    answer = models.TextField()\nclass Subscriber(AppModel):\n    civil_status = models.CharField(max_length=20,choices=CIVIL_STATUS)\n    first_name = models.CharField(max_length=255)",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1718,7 +1884,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class UserAnswer(AppModel):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    answer = models.TextField()\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'\n        MARRIED = 'Married'\n        DIVORCED = 'Divorced'\n    civil_status = models.CharField(",
+        "peekOfCode": "class UserAnswer(AppModel):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    answer = models.TextField()\nclass Subscriber(AppModel):\n    civil_status = models.CharField(max_length=20,choices=CIVIL_STATUS)\n    first_name = models.CharField(max_length=255)\n    last_name = models.CharField(max_length=255)\n    maiden_name = models.CharField(max_length=255, blank=True, null=True)\n    dob = models.DateField()",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1727,7 +1893,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'\n        MARRIED = 'Married'\n        DIVORCED = 'Divorced'\n    civil_status = models.CharField(\n        max_length=20,\n        choices=CivilStatus.choices,\n        default=CivilStatus.SINGLE,\n    )",
+        "peekOfCode": "class Subscriber(AppModel):\n    civil_status = models.CharField(max_length=20,choices=CIVIL_STATUS)\n    first_name = models.CharField(max_length=255)\n    last_name = models.CharField(max_length=255)\n    maiden_name = models.CharField(max_length=255, blank=True, null=True)\n    dob = models.DateField()\n    profession = models.CharField(max_length=255)\n    address = models.TextField()\n    phone_number = models.CharField(max_length=20)",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1758,7 +1924,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )\nclass AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product)",
+        "peekOfCode": "class ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )\nclass AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1767,7 +1933,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)",
+        "peekOfCode": "class AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1776,7 +1942,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Pricing(AppModel):\n    product = models.ForeignKey(to=Product)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n# This class named Contrat is a subclass of AppModel.\nclass Contract(AppModel):",
+        "peekOfCode": "class Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n# This class named Contrat is a subclass of AppModel.\nclass Contract(AppModel):",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1785,7 +1951,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Contract(AppModel):\n    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True)\n    approved_on = models.DateTimeField(blank=True , null=True , default=None)\n    commissioned_by = models.ForeignKey(to=User , on_delete=models.RESTRICT , blank=True , null=True)\n    subscriber_info = models.ForeignKey(to=Subscriber , on_delete=models.RESTRICT)\n    pricing = models.ForeignKey(to=Pricing , on_delete=models.RESTRICT)\n    beneficial = models.ForeignKey(to=Beneficiary , on_delete=models.RESTRICT , blank=True , null=True)",
+        "peekOfCode": "class Contract(AppModel):\n    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True , related_name=\"contract_approved_by\")\n    approved_on = models.DateTimeField(blank=True , null=True , default=None)\n    commissioned_by = models.ForeignKey(to=User , on_delete=models.RESTRICT , blank=True , null=True , related_name=\"contract_commissioned\")\n    subscriber_info = models.ForeignKey(to=Subscriber , on_delete=models.RESTRICT)\n    pricing = models.ForeignKey(to=Pricing , on_delete=models.RESTRICT)\n    beneficial = models.ForeignKey(to=Beneficiary , on_delete=models.RESTRICT , blank=True , null=True)",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1794,7 +1960,25 @@
         "kind": 5,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "User = get_user_model()\nclass InsuranceType(models.TextChoices):\n        NONLIVE = 'nonLive'\n        LIVE = 'live'\nclass Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()",
+        "peekOfCode": "User = get_user_model()\nINSURANCE_TYPE = [\n    ('nonLive' , \"NON_LIVE\"),\n    ('live','LIVE')   \n    ]\nCIVIL_STATUS = [\n        (\"Single\",\"SINGLE\"),\n        (\"Married\",\"MARRIED\" ),\n        (\"Divorced\",\"DIVORCED\")\n]    ",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "INSURANCE_TYPE",
+        "kind": 5,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "INSURANCE_TYPE = [\n    ('nonLive' , \"NON_LIVE\"),\n    ('live','LIVE')   \n    ]\nCIVIL_STATUS = [\n        (\"Single\",\"SINGLE\"),\n        (\"Married\",\"MARRIED\" ),\n        (\"Divorced\",\"DIVORCED\")\n]    \nclass Product(AppModel):",
+        "detail": "services.models",
+        "documentation": {}
+    },
+    {
+        "label": "CIVIL_STATUS",
+        "kind": 5,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "CIVIL_STATUS = [\n        (\"Single\",\"SINGLE\"),\n        (\"Married\",\"MARRIED\" ),\n        (\"Divorced\",\"DIVORCED\")\n]    \nclass Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1885,6 +2069,15 @@
         "importPath": "services.serializers",
         "description": "services.serializers",
         "peekOfCode": "class ContractSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Contract\n        fields = '__all__'",
+        "detail": "services.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "USER",
+        "kind": 5,
+        "importPath": "services.serializers",
+        "description": "services.serializers",
+        "peekOfCode": "USER = get_user_model()\nclass ProductSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Product\n        fields = '__all__'\nclass QuestionSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Question\n        fields = '__all__'\nclass UserAnswerSerializer(serializers.ModelSerializer):",
         "detail": "services.serializers",
         "documentation": {}
     },
@@ -1994,6 +2187,15 @@
         "description": "services.views",
         "peekOfCode": "class ContractViewSet(viewsets.ModelViewSet):\n    queryset = Contract.objects.all()\n    serializer_class = ContractSerializer",
         "detail": "services.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "users.migrations.0001_initial",
+        "description": "users.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Users',\n            fields=[\n                ('password', models.CharField(max_length=128, verbose_name='password')),",
+        "detail": "users.migrations.0001_initial",
         "documentation": {}
     },
     {

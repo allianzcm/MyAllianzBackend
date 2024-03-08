@@ -1,6 +1,7 @@
 from rest_framework import viewsets
-from .models import Product, Subscriber, Beneficiary, ServiceDuration, ZoneCover, AgeRange, Pricing, Contract
-from .serializers import ProductSerializer, SubscriberSerializer, BeneficiarySerializer, ServiceDurationSerializer, ZoneCoverSerializer, AgeRangeSerializer, PricingSerializer, ContractSerializer
+from .models import (AgeRange, Beneficiary, Contract, Pricing, Product, Question,
+    ServiceDuration, Subscriber, User, UserAnswer, ZoneCover)
+from .serializers import ProductSerializer, SubscriberSerializer, BeneficiarySerializer, ServiceDurationSerializer, ZoneCoverSerializer, AgeRangeSerializer, PricingSerializer, ContractSerializer , QuestionSerializer , UserAnswerSerializer
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
