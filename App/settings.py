@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'users',
     'gifts',
     'faqs',
+    'services',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'azcm',
         'USER': 'root',
+        # 'PASSWORD': 'death the kid 2',
         'PASSWORD': 'allianzdb@2024',
         'HOST': '127.0.0.1',
         'PORT': '3306',
