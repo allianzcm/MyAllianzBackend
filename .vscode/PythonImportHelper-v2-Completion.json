@@ -32,30 +32,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -65,86 +41,6 @@
     },
     {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -610,22 +506,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -866,15 +746,6 @@
         "documentation": {}
     },
     {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
         "label": "django_filters",
         "kind": 6,
         "isExtraImport": true,
@@ -961,15 +832,6 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "users.models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "users.models",
-        "description": "users.models",
-        "detail": "users.models",
         "documentation": {}
     },
     {
@@ -1485,7 +1347,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",",
+        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1494,7 +1356,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1607,24 +1469,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "faqs.migrations.0001_initial",
-        "description": "faqs.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='FAQ',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),",
-        "detail": "faqs.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "faqs.migrations.0002_faq_answer_fr",
-        "description": "faqs.migrations.0002_faq_answer_fr",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('faqs', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='faq',\n            name='answer_fr',\n            field=models.TextField(default=1),\n            preserve_default=False,",
-        "detail": "faqs.migrations.0002_faq_answer_fr",
-        "documentation": {}
-    },
-    {
         "label": "FaqsConfig",
         "kind": 6,
         "importPath": "faqs.apps",
@@ -1676,24 +1520,6 @@
         "description": "faqs.views",
         "peekOfCode": "class FAQView(CoreBaseModelViewSet):\n    model = FAQ\n    serializer_class = FAQSerializer",
         "detail": "faqs.views",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "gifts.migrations.0001_initial",
-        "description": "gifts.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Gift',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),",
-        "detail": "gifts.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "gifts.migrations.0002_initial",
-        "description": "gifts.migrations.0002_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('gifts', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giftrequest',\n            name='user',",
-        "detail": "gifts.migrations.0002_initial",
         "documentation": {}
     },
     {
@@ -1818,7 +1644,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Products(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'",
+        "peekOfCode": "class Products(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField()\n    insurance_type = models.CharFeild(choice=InsuranceType , default=InsuranceType.LIVE)\nclass Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SIN = 'Single'",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1827,7 +1653,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SINGLE = 'Single'\n        MARRIED = 'Married'\n        DIVORCED = 'Divorced'\n    civil_status = models.CharField(\n        max_length=20,\n        choices=CivilStatus.choices,\n        default=CivilStatus.SINGLE,\n    )",
+        "peekOfCode": "class Subscriber(AppModel):\n    class CivilStatus(models.TextChoices):\n        SIN = 'Single'\n        MAR = 'Married'\n        DIV = 'Divorced'\n    civil_status = models.CharField(\n        max_length=20,\n        choices=CivilStatus.choices,\n        default=CivilStatus.SINGLE,\n    )",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1892,33 +1718,6 @@
         "description": "services.models",
         "peekOfCode": "class Subscription(AppModel):\n    subscription_id = models.AutoField(primary_key=True)\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    insurance_service = models.CharField(max_length=255)\n    subscription_date = models.DateField(auto_now_add=True)",
         "detail": "services.models",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "users.migrations.0001_initial",
-        "description": "users.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Users',\n            fields=[\n                ('password', models.CharField(max_length=128, verbose_name='password')),",
-        "detail": "users.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "users.migrations.0008_remove_users_avatar",
-        "description": "users.migrations.0008_remove_users_avatar",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0007_remove_users_username_alter_users_phone'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='users',\n            name='avatar',\n        ),\n    ]",
-        "detail": "users.migrations.0008_remove_users_avatar",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "users.migrations.0009_users_avatar",
-        "description": "users.migrations.0009_users_avatar",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0008_remove_users_avatar'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='users',\n            name='avatar',\n            field=models.ImageField(blank=True, default=None, null=True, upload_to=''),\n        ),",
-        "detail": "users.migrations.0009_users_avatar",
         "documentation": {}
     },
     {

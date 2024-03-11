@@ -203,7 +203,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost',
     "http://127.0.0.1",
-    "10.10.0.63:81"
+    "http://10.10.0.63:81"
 ]
 ALLOWED_HOSTS = [
     "10.10.0.63",

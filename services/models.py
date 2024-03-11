@@ -17,9 +17,9 @@ class Products(AppModel):
 
 class Subscriber(AppModel):
     class CivilStatus(models.TextChoices):
-        SINGLE = 'Single'
-        MARRIED = 'Married'
-        DIVORCED = 'Divorced'
+        SIN = 'Single'
+        MAR = 'Married'
+        DIV = 'Divorced'
         
     civil_status = models.CharField(
         max_length=20,
@@ -38,6 +38,7 @@ class Subscriber(AppModel):
     email = models.EmailField()
     unique_identification_number = models.CharField(max_length=50)
 
+
 class Beneficiary(AppModel):
     subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=255)
@@ -48,11 +49,13 @@ class Beneficiary(AppModel):
     annuity_manager_phone_number = models.CharField(max_length=20)
     annuity_amount = models.DecimalField(max_digits=15, decimal_places=2)
 
+
 class Premium(AppModel):
     subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)
     annuitant_amount_to_be_paid = models.DecimalField(max_digits=15, decimal_places=2)
     premium_for_guarantee = models.DecimalField(max_digits=15, decimal_places=2)
     duration = models.CharField(max_length=50)
+
 
 
 class MedicalHistoryQuestion(AppModel):
@@ -79,3 +82,4 @@ class Subscription(AppModel):
     subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)
     insurance_service = models.CharField(max_length=255)
     subscription_date = models.DateField(auto_now_add=True)
+    
