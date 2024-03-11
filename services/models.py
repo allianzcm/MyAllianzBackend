@@ -28,10 +28,11 @@ class Product(AppModel):
     name_fr = models.CharField(max_length=255)
     description_en = models.TextField()
     description_fr = models.TextField()
-    image = models.ImageField(blank=True, null=True)
+    image = models.ImageField(upload_to='services/images/')
+    logo = models.ImageField(upload_to='services/logos/')
     insurance_type = models.CharField(max_length=20,choices=INSURANCE_TYPE)
     stars = models.IntegerField()
-    # zone_covered = models.ForeignKey(ZoneCover , on_delete=models.RESTRICT , null=True,blank=True)
+    zone_covered = models.ForeignKey(ZoneCover , on_delete=models.RESTRICT , null=True,blank=True)
     def __str__(self) -> str:
         return self.name_en
 class Question(AppModel):
@@ -78,7 +79,13 @@ class  ServiceDuration(AppModel):
         ]
     duration_unit =  models.CharField(max_length=5 , choices=DURATION_TYPE)
     length = models.IntegerField()
-    
+    def __str__(self) -> str:
+        if self.duration_unit == "WEK":
+            return f'{self.length} weeks'
+        if self.duration_unit == "MON":
+            return f'{self.length} months'
+        if self.duration_unit == "YEA":
+            return f'{self.length} years'
 
 
 class AgeRange(AppModel):
