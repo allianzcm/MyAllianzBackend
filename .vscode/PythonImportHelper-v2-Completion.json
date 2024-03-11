@@ -1902,7 +1902,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Beneficiary(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    last_name = models.CharField(max_length=255)\n    first_name = models.CharField(max_length=255)\n    age = models.IntegerField()\n    address = models.TextField()\n    town_resident = models.CharField(max_length=255)\n    annuity_manager_phone_number = models.CharField(max_length=20)\n    annuity_amount = models.DecimalField(max_digits=15, decimal_places=2)",
+        "peekOfCode": "class Beneficiary(AppModel):\n    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)\n    last_name = models.CharField(max_length=255)\n    first_name = models.CharField(max_length=255)\n    age = models.IntegerField()\n    address = models.TextField()\n    town_resident = models.CharField(max_length=255)\n    annuity_manager_phone_number = models.CharField(max_length=20)\n    annuity_amount = models.DecimalField(max_digits=15, decimal_places=2)\nclass  ServiceDuration(AppModel):",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1910,12 +1910,12 @@
         "label": {
             "name": "",
             "kind": 6,
-            "peekOfCode": "class  ServiceDuration(AppModel):\n    class DurationType(models.TextChoices):\n        WEK = 'Weeks'\n        MON = 'Months'\n        YAE = 'Year'\n    length = models.IntegerField()\nclass ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )"
+            "peekOfCode": "class  ServiceDuration(AppModel):\n    class DurationType(models.TextChoices):\n        WEK = 'Weeks'\n        MON = 'Months'\n        YAE = 'Year'\n    length = models.IntegerField()\nclass ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )\nclass AgeRange(AppModel):"
         },
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class  ServiceDuration(AppModel):\n    class DurationType(models.TextChoices):\n        WEK = 'Weeks'\n        MON = 'Months'\n        YAE = 'Year'\n    length = models.IntegerField()\nclass ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )",
+        "peekOfCode": "class  ServiceDuration(AppModel):\n    class DurationType(models.TextChoices):\n        WEK = 'Weeks'\n        MON = 'Months'\n        YAE = 'Year'\n    length = models.IntegerField()\nclass ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )\nclass AgeRange(AppModel):",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1924,7 +1924,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )\nclass AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)",
+        "peekOfCode": "class ZoneCover(AppModel):\n    zone_en = models.TextField(max_length=200 )\n    zone_fr = models.TextField(max_length=200 )\nclass AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1933,7 +1933,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)",
+        "peekOfCode": "class AgeRange(AppModel):\n    above  = models.IntegerField()\n    below  = models.IntegerField()\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)",
         "detail": "services.models",
         "documentation": {}
     },
@@ -1942,7 +1942,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n# This class named Contrat is a subclass of AppModel.\nclass Contract(AppModel):",
+        "peekOfCode": "class Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\nclass Contract(AppModel):\n    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True , related_name=\"contract_approved_by\")\n    approved_on = models.DateTimeField(blank=True , null=True , default=None)",
         "detail": "services.models",
         "documentation": {}
     },
