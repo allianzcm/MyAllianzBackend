@@ -128,126 +128,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -711,14 +591,6 @@
         "description": "django.contrib",
         "isExtraImport": true,
         "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -1526,7 +1398,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'App.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        # 'PASSWORD': 'death the kid 2',\n        'PASSWORD': 'allianzdb@2024',",
+        "peekOfCode": "WSGI_APPLICATION = 'App.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        # 'USER': 'RaimsPires',\n        # 'PASSWORD': 'death the kid 2',",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1535,7 +1407,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        # 'PASSWORD': 'death the kid 2',\n        'PASSWORD': 'allianzdb@2024',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',\n        'OPTIONS': {",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'azcm',\n        'USER': 'root',\n        # 'USER': 'RaimsPires',\n        # 'PASSWORD': 'death the kid 2',\n        'PASSWORD': 'allianzdb@2024',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1661,7 +1533,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",",
+        "peekOfCode": "AUTH_USER_MODEL = 'users.Users'\nCORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    '*'\n    # \"10.10.0.63\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1670,7 +1542,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:3000',\n    'http://localhost',\n    \"http://127.0.0.1\",\n    \"http://10.10.0.63:81\"\n]\nALLOWED_HOSTS = [\n    '*'\n    # \"10.10.0.63\",\n        # \"http://127.0.0.1\",",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1679,7 +1551,7 @@
         "kind": 5,
         "importPath": "App.settings",
         "description": "App.settings",
-        "peekOfCode": "ALLOWED_HOSTS = [\n    \"10.10.0.63\",\n        \"127.0.0.1\",\n        \"locahost\",\n]\nCORS_ALLOW_ALL_ORIGINS = True\nMEDIA_URL = 'storage/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'",
+        "peekOfCode": "ALLOWED_HOSTS = [\n    '*'\n    # \"10.10.0.63\",\n        # \"http://127.0.0.1\",\n        # \"http://localhost\",\n]\nCORS_ALLOW_ALL_ORIGINS = True\nMEDIA_URL = 'storage/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'storage/')\n# mail settings configurations",
         "detail": "App.settings",
         "documentation": {}
     },
@@ -1859,7 +1731,7 @@
         "kind": 6,
         "importPath": "gifts.migrations.0002_initial",
         "description": "gifts.migrations.0002_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('gifts', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giftrequest',\n            name='user',",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('gifts', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giftrequest',\n            name='user',",
         "detail": "gifts.migrations.0002_initial",
         "documentation": {}
     },
@@ -1976,80 +1848,8 @@
         "kind": 6,
         "importPath": "services.migrations.0002_initial",
         "description": "services.migrations.0002_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('services', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='useranswer',\n            name='user',",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('services', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='useranswer',\n            name='user',",
         "detail": "services.migrations.0002_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0003_product_stars",
-        "description": "services.migrations.0003_product_stars",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('services', '0002_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='product',\n            name='stars',\n            field=models.IntegerField(default=0),\n            preserve_default=False,",
-        "detail": "services.migrations.0003_product_stars",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0004_contract_canceled_at_contract_canceled_by_and_more",
-        "description": "services.migrations.0004_contract_canceled_at_contract_canceled_by_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('services', '0003_product_stars'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='contract',\n            name='canceled_at',\n            field=models.DateField(blank=True, default=None, null=True),",
-        "detail": "services.migrations.0004_contract_canceled_at_contract_canceled_by_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0005_alter_zonecover_zone_en_alter_zonecover_zone_fr",
-        "description": "services.migrations.0005_alter_zonecover_zone_en_alter_zonecover_zone_fr",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('services', '0004_contract_canceled_at_contract_canceled_by_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='zonecover',\n            name='zone_en',\n            field=models.CharField(max_length=200),\n        ),",
-        "detail": "services.migrations.0005_alter_zonecover_zone_en_alter_zonecover_zone_fr",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0006_subscriber_direct_subscription",
-        "description": "services.migrations.0006_subscriber_direct_subscription",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('services', '0005_alter_zonecover_zone_en_alter_zonecover_zone_fr'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='subscriber',\n            name='direct_subscription',\n            field=models.BooleanField(default=True),\n        ),",
-        "detail": "services.migrations.0006_subscriber_direct_subscription",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0007_alter_product_image",
-        "description": "services.migrations.0007_alter_product_image",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('services', '0006_subscriber_direct_subscription'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='product',\n            name='image',\n            field=models.ImageField(blank=True, null=True, upload_to=''),\n        ),",
-        "detail": "services.migrations.0007_alter_product_image",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0008_product_zone_covered",
-        "description": "services.migrations.0008_product_zone_covered",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('services', '0007_alter_product_image'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='product',\n            name='zone_covered',\n            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.RESTRICT, to='services.zonecover'),\n            preserve_default=False,",
-        "detail": "services.migrations.0008_product_zone_covered",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0009_alter_product_zone_covered",
-        "description": "services.migrations.0009_alter_product_zone_covered",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('services', '0008_product_zone_covered'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='product',\n            name='zone_covered',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.RESTRICT, to='services.zonecover'),\n        ),",
-        "detail": "services.migrations.0009_alter_product_zone_covered",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "services.migrations.0010_remove_product_zone_covered",
-        "description": "services.migrations.0010_remove_product_zone_covered",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('services', '0009_alter_product_zone_covered'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='product',\n            name='zone_covered',\n        ),\n    ]",
-        "detail": "services.migrations.0010_remove_product_zone_covered",
         "documentation": {}
     },
     {
@@ -2059,6 +1859,15 @@
         "description": "services.apps",
         "peekOfCode": "class ServicesConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'services'",
         "detail": "services.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AgeRange",
+        "kind": 6,
+        "importPath": "services.models",
+        "description": "services.models",
+        "peekOfCode": "class AgeRange(AppModel):\n    above  = models.IntegerField(null=True , blank=True)\n    below  = models.IntegerField(null=True , blank=True)\n    def __str__(self) -> str:\n        if self.above:\n            return f'> {self.above}'\n        if self.below:\n            return f'< {self.below}'\nclass ZoneCover(AppModel):\n    zone_en = models.CharField(max_length=200 )",
+        "detail": "services.models",
         "documentation": {}
     },
     {
@@ -2075,7 +1884,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField(blank=True, null=True)\n    insurance_type = models.CharField(max_length=20,choices=INSURANCE_TYPE)\n    stars = models.IntegerField()\n    # zone_covered = models.ForeignKey(ZoneCover , on_delete=models.RESTRICT , null=True,blank=True)\n    def __str__(self) -> str:",
+        "peekOfCode": "class Product(AppModel):\n    name_en = models.CharField(max_length=255)\n    name_fr = models.CharField(max_length=255)\n    description_en = models.TextField()\n    description_fr = models.TextField()\n    image = models.ImageField(upload_to='services/images/')\n    logo = models.ImageField(upload_to='services/logos/')\n    insurance_type = models.CharField(max_length=20,choices=INSURANCE_TYPE)\n    stars = models.IntegerField()\n    def __str__(self) -> str:",
         "detail": "services.models",
         "documentation": {}
     },
@@ -2119,21 +1928,12 @@
         "label": {
             "name": "",
             "kind": 6,
-            "peekOfCode": "class  ServiceDuration(AppModel):\n    DURATION_TYPE = [\n        (\"WEK\",'Weeks'),\n        (\"MON\",'Months'),\n        (\"YEA\",'Year')\n        ]\n    duration_unit =  models.CharField(max_length=5 , choices=DURATION_TYPE)\n    length = models.IntegerField()\nclass AgeRange(AppModel):\n    above  = models.IntegerField(null=True , blank=True)"
+            "peekOfCode": "class  ServiceDuration(AppModel):\n    DURATION_TYPE = [\n        (\"WEK\",'Weeks'),\n        (\"MON\",'Months'),\n        (\"YEA\",'Year')\n        ]\n    duration_unit =  models.CharField(max_length=5 , choices=DURATION_TYPE)\n    length = models.IntegerField()\n    def __str__(self) -> str:\n        if self.duration_unit == \"WEK\":"
         },
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class  ServiceDuration(AppModel):\n    DURATION_TYPE = [\n        (\"WEK\",'Weeks'),\n        (\"MON\",'Months'),\n        (\"YEA\",'Year')\n        ]\n    duration_unit =  models.CharField(max_length=5 , choices=DURATION_TYPE)\n    length = models.IntegerField()\nclass AgeRange(AppModel):\n    above  = models.IntegerField(null=True , blank=True)",
-        "detail": "services.models",
-        "documentation": {}
-    },
-    {
-        "label": "AgeRange",
-        "kind": 6,
-        "importPath": "services.models",
-        "description": "services.models",
-        "peekOfCode": "class AgeRange(AppModel):\n    above  = models.IntegerField(null=True , blank=True)\n    below  = models.IntegerField(null=True , blank=True)\n    def __str__(self) -> str:\n        if self.above:\n            return f'> {self.above}'\n        if self.below:\n            return f'< {self.below}'\nclass Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)",
+        "peekOfCode": "class  ServiceDuration(AppModel):\n    DURATION_TYPE = [\n        (\"WEK\",'Weeks'),\n        (\"MON\",'Months'),\n        (\"YEA\",'Year')\n        ]\n    duration_unit =  models.CharField(max_length=5 , choices=DURATION_TYPE)\n    length = models.IntegerField()\n    def __str__(self) -> str:\n        if self.duration_unit == \"WEK\":",
         "detail": "services.models",
         "documentation": {}
     },
@@ -2142,7 +1942,7 @@
         "kind": 6,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "class Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\n    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)\nclass Contract(AppModel):\n    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True , related_name=\"contract_approved_by\")\n    approved_on = models.DateTimeField(blank=True , null=True , default=None)",
+        "peekOfCode": "class Pricing(AppModel):\n    product = models.ForeignKey(to=Product, on_delete=models.RESTRICT)\n    duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)\n    total_premium = models.IntegerField()\n    commission = models.IntegerField()\n    zone_covered = models.ForeignKey(ZoneCover ,blank=True, on_delete=models.RESTRICT,)\n    age_range = models.ForeignKey(to=AgeRange , blank=True , on_delete=models.RESTRICT,)\nclass Contract(AppModel):\n    approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True , related_name=\"contract_approved_by\")\n    approved_on = models.DateTimeField(blank=True , null=True , default=None)",
         "detail": "services.models",
         "documentation": {}
     },
@@ -2169,7 +1969,7 @@
         "kind": 5,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "INSURANCE_TYPE = [\n    ('nonLive' , \"NON_LIVE\"),\n    ('live','LIVE')   \n    ]\nCIVIL_STATUS = [\n        (\"Single\",\"SINGLE\"),\n        (\"Married\",\"MARRIED\" ),\n        (\"Divorced\",\"DIVORCED\")\n]    \nclass ZoneCover(AppModel):",
+        "peekOfCode": "INSURANCE_TYPE = [\n    ('nonLive' , \"NON_LIVE\"),\n    ('live','LIVE')   \n    ]\nCIVIL_STATUS = [\n        (\"Single\",\"SINGLE\"),\n        (\"Married\",\"MARRIED\" ),\n        (\"Divorced\",\"DIVORCED\")\n]    \nclass AgeRange(AppModel):",
         "detail": "services.models",
         "documentation": {}
     },
@@ -2178,7 +1978,7 @@
         "kind": 5,
         "importPath": "services.models",
         "description": "services.models",
-        "peekOfCode": "CIVIL_STATUS = [\n        (\"Single\",\"SINGLE\"),\n        (\"Married\",\"MARRIED\" ),\n        (\"Divorced\",\"DIVORCED\")\n]    \nclass ZoneCover(AppModel):\n    zone_en = models.CharField(max_length=200 )\n    zone_fr = models.CharField(max_length=200 )\n    def __str__(self):\n        return self.zone_en",
+        "peekOfCode": "CIVIL_STATUS = [\n        (\"Single\",\"SINGLE\"),\n        (\"Married\",\"MARRIED\" ),\n        (\"Divorced\",\"DIVORCED\")\n]    \nclass AgeRange(AppModel):\n    above  = models.IntegerField(null=True , blank=True)\n    below  = models.IntegerField(null=True , blank=True)\n    def __str__(self) -> str:\n        if self.above:",
         "detail": "services.models",
         "documentation": {}
     },

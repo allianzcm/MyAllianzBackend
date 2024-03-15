@@ -15,6 +15,14 @@ CIVIL_STATUS = [
         ("Divorced","DIVORCED")
 ]    
 
+class AgeRange(AppModel):
+    above  = models.IntegerField(null=True , blank=True)
+    below  = models.IntegerField(null=True , blank=True)
+    def __str__(self) -> str:
+        if self.above:
+            return f'> {self.above}'
+        if self.below:
+            return f'< {self.below}'
 
 class ZoneCover(AppModel):
     zone_en = models.CharField(max_length=200 )
@@ -32,7 +40,8 @@ class Product(AppModel):
     logo = models.ImageField(upload_to='services/logos/')
     insurance_type = models.CharField(max_length=20,choices=INSURANCE_TYPE)
     stars = models.IntegerField()
-    zone_covered = models.ForeignKey(ZoneCover , on_delete=models.RESTRICT , null=True,blank=True)
+
+
     def __str__(self) -> str:
         return self.name_en
 class Question(AppModel):
@@ -88,14 +97,6 @@ class  ServiceDuration(AppModel):
             return f'{self.length} years'
 
 
-class AgeRange(AppModel):
-    above  = models.IntegerField(null=True , blank=True)
-    below  = models.IntegerField(null=True , blank=True)
-    def __str__(self) -> str:
-        if self.above:
-            return f'> {self.above}'
-        if self.below:
-            return f'< {self.below}'
 
 
 class Pricing(AppModel):
@@ -103,9 +104,9 @@ class Pricing(AppModel):
     duration = models.ForeignKey(to=ServiceDuration , on_delete=models.RESTRICT)
     total_premium = models.IntegerField()
     commission = models.IntegerField()
-    zone_covert = models.ForeignKey(to=ZoneCover ,on_delete=models.RESTRICT, null=True , blank=True , default=None)
-    age_range = models.ForeignKey(to=AgeRange ,on_delete=models.RESTRICT, null=True , blank=True , default=None)
-
+    zone_covered = models.ForeignKey(ZoneCover ,blank=True, on_delete=models.RESTRICT,)
+    age_range = models.ForeignKey(to=AgeRange , blank=True , on_delete=models.RESTRICT,)
+    
 class Contract(AppModel):
     approved_by = models.ForeignKey(to=User , on_delete=models.RESTRICT, blank=True , null=True , related_name="contract_approved_by")
     approved_on = models.DateTimeField(blank=True , null=True , default=None)

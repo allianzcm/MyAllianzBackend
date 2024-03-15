@@ -98,10 +98,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'azcm',
-        # 'USER': 'root',
-        'USER': 'RaimsPires',
-        'PASSWORD': 'death the kid 2',
-        # 'PASSWORD': 'allianzdb@2024',
+        'USER': 'root',
+        # 'USER': 'RaimsPires',
+        # 'PASSWORD': 'death the kid 2',
+        'PASSWORD': 'allianzdb@2024',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
