@@ -20,13 +20,15 @@ from django.conf.urls.static import static
 from django.urls import path , include
 from django.conf.urls.static import static
 from django.conf import settings
+from contracts.models import Contract
 
 urlpatterns = [
+    # path('admin/', admin.site.urls),
     path('api/', include('users.urls')),
     path('api/' , include('gifts.urls')),
     path('api/' , include('faqs.urls')),
     path('api/' , include('services.urls')),
-    path('admin/', admin.site.urls),
+    path('api/' , include('contracts.urls')),
 ] 
 
 if settings.DEBUG:
