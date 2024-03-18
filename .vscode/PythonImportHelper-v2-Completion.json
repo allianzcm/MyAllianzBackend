@@ -2182,7 +2182,7 @@
         "kind": 6,
         "importPath": "contracts.views",
         "description": "contracts.views",
-        "peekOfCode": "class ImportExtractionDataView(generics.GenericAPIView):\n    def post(self, request, *args, **kwargs):\n        file = request.FILES['excel']\n        data = pd.read_excel(file,skiprows=3)\n        # data['Date Effet'] = pd.to_datetime(data['Date Effet'], format='mixed').dt.strftime('%y-%m-%d')\n        last_extraction = Contract.objects.order_by('-effect_date').first()\n        last_extraction_serializer = ContractSerializer(instance=last_extraction).data\n        if last_extraction is not None :\n            recent_date = last_extraction_serializer['effect_date']\n            pd_date= formatDate(data['Date Effet'].min())",
+        "peekOfCode": "class ImportExtractionDataView(generics.GenericAPIView):\n    def post(self, request, *args, **kwargs):\n        file = request.FILES['upload']\n        data = pd.read_excel(file,skiprows=3)\n        # data['Date Effet'] = pd.to_datetime(data['Date Effet'], format='mixed').dt.strftime('%y-%m-%d')\n        last_extraction = Contract.objects.order_by('-effect_date').first()\n        last_extraction_serializer = ContractSerializer(instance=last_extraction).data\n        if last_extraction is not None :\n            recent_date = last_extraction_serializer['effect_date']\n            pd_date= formatDate(data['Date Effet'].min())",
         "detail": "contracts.views",
         "documentation": {}
     },
@@ -2200,7 +2200,7 @@
         "kind": 2,
         "importPath": "contracts.views",
         "description": "contracts.views",
-        "peekOfCode": "def filter(name):\n    return not len(name) < 12  and  name[0].isalpha()  and name[-1].isalpha()\ndef formatDate(date):\n    date = datetime.strptime(date , '%d/%m/%Y')\n    date = date.strftime('%Y-%m-%d')\n    return date\nclass ImportExtractionDataView(generics.GenericAPIView):\n    def post(self, request, *args, **kwargs):\n        file = request.FILES['excel']\n        data = pd.read_excel(file,skiprows=3)",
+        "peekOfCode": "def filter(name):\n    return not len(name) < 12  and  name[0].isalpha()  and name[-1].isalpha()\ndef formatDate(date):\n    date = datetime.strptime(date , '%d/%m/%Y')\n    date = date.strftime('%Y-%m-%d')\n    return date\nclass ImportExtractionDataView(generics.GenericAPIView):\n    def post(self, request, *args, **kwargs):\n        file = request.FILES['upload']\n        data = pd.read_excel(file,skiprows=3)",
         "detail": "contracts.views",
         "documentation": {}
     },
@@ -2209,7 +2209,7 @@
         "kind": 2,
         "importPath": "contracts.views",
         "description": "contracts.views",
-        "peekOfCode": "def formatDate(date):\n    date = datetime.strptime(date , '%d/%m/%Y')\n    date = date.strftime('%Y-%m-%d')\n    return date\nclass ImportExtractionDataView(generics.GenericAPIView):\n    def post(self, request, *args, **kwargs):\n        file = request.FILES['excel']\n        data = pd.read_excel(file,skiprows=3)\n        # data['Date Effet'] = pd.to_datetime(data['Date Effet'], format='mixed').dt.strftime('%y-%m-%d')\n        last_extraction = Contract.objects.order_by('-effect_date').first()",
+        "peekOfCode": "def formatDate(date):\n    date = datetime.strptime(date , '%d/%m/%Y')\n    date = date.strftime('%Y-%m-%d')\n    return date\nclass ImportExtractionDataView(generics.GenericAPIView):\n    def post(self, request, *args, **kwargs):\n        file = request.FILES['upload']\n        data = pd.read_excel(file,skiprows=3)\n        # data['Date Effet'] = pd.to_datetime(data['Date Effet'], format='mixed').dt.strftime('%y-%m-%d')\n        last_extraction = Contract.objects.order_by('-effect_date').first()",
         "detail": "contracts.views",
         "documentation": {}
     },

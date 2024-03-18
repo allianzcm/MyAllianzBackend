@@ -25,7 +25,7 @@ def formatDate(date):
 
 class ImportExtractionDataView(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
-        file = request.FILES['excel']
+        file = request.FILES['upload']
         data = pd.read_excel(file,skiprows=3)
         # data['Date Effet'] = pd.to_datetime(data['Date Effet'], format='mixed').dt.strftime('%y-%m-%d')
         last_extraction = Contract.objects.order_by('-effect_date').first()
@@ -50,5 +50,5 @@ class ImportExtractionDataView(generics.GenericAPIView):
             date_create = formatDate(contract['Date Emission'])
             effect_date = formatDate( contract['Date Effet'])
             end_date = formatDate( contract['Date Echéance'])
-            Contract.objects.create(Taxpayer_number=contract["Numéro de contribuable"] ,branch=contract['Branche'] , big_branch=contract['Grande Branche'] , product=contract['Produit'] ,agent = contract['Agence'] , date_create=date_create ,effect_date =effect_date , end_date=end_date ,Police_number=contract['N° Police'])
+            Contract.objects.create(Taxpayer_number=contract["Numéro de contribuable"] ,branch=contract['Branche'] , big_branch=contract['Grande Branche'] , product=contract['Produit'] ,agent = contract['Agence'] , date_create=date_create ,effect_date =effect_date , end_date=end_date ,Police_number=contract['N° Police'] , company_ass=contract['Acc Cie'],amount_paid=contract['Prime Nette'] , carrier_Acc=contract['Acc App'] ,tax=contract['Tva'])
         return Response(data={'msg':"Successully Imported Extraction Data"})

@@ -1,7 +1,7 @@
 from django.db import models
 from App.utils.models import AppModel
 
-# Create your models here.
+
 class Contract(AppModel):
     Taxpayer_number = models.CharField(max_length=255)
     branch = models.CharField(max_length=255)
@@ -12,3 +12,8 @@ class Contract(AppModel):
     effect_date = models.DateField()
     end_date = models.DateField()
     Police_number = models.CharField(max_length=255)
+    amount_paid = models.IntegerField()
+    company_ass = models.IntegerField()
+    carrier_Acc = models.IntegerField()
+    tax = models.IntegerField()
+    
